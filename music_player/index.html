@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Link for Google Fonts' Open Sans font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <!-- Included Bootstrap v5.3 -->
+    <!-- Didn't even use it -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+        
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="styles.css" /> 
+    <!-- Responsive stylesheet -->
+    <link rel="stylesheet" type="text/css" href="responsive_styles.css"/>
+    <!-- Title of the Page -->
+    <title>Ninja Studio</title>
+    <!-- For using FontAwesome icons in the page-->
+    <script
+      src="https://kit.fontawesome.com/8e3b4fcd56.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navigation">
+        <!-- Music Player Icon -->
+        <div class="logo-name-container">
+            <div class="mp_icon">
+                <i class="fa-solid fa-music"></i>
+            </div>
+            <!-- Music Player Name -->
+            <div class="mp_name">
+                <h3 style="font-weight:400">
+                    Ninja
+                </h3>
+                <h2 style="font-weight:700;">
+                    Studio
+                </h2>
+            </div>
+        </div>
+        <div class="fav">
+            <h6 class="white">Favourites</h6>
+        </div>
+        <!-- Search Bar -->
+        <div class="search_bar">
+            <div>
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <input type="text" name = "search" placeholder="Search">
+            <div>
+                <i class="fa-solid fa-microphone"></i>
+            </div>
+        </div>
+        <!-- Notification Icon -->
+        <div class="notification_icon">
+            <i class="fa-solid fa-bell white"></i>
+            <span>Notification</span>
+        </div>
+        <!-- Profile Icon -->
+        <div class="profile_container">
+            <!-- FontAwesome Icon Stacking used to have a perfect round background on the profile icon -->
+            <span class="fa-stack fa-2x">
+                <i class="fa-solid fa-circle fa-stack-2x block-black"></i>
+                <i class="fa-solid fa-user fa-stack-1x"></i>
+              </span>
+        </div>
+    </nav>
+    <!-- Main Section Consisting of the rest of the page content -->
+    <!-- This section is divided into two sections using aside tags -->
+    <main>
+        <!-- Aside Section 1 consisting of carousel items, album titles and songs -->
+        <aside class="aside section-1">
+            <!-- Carousel -->
+            <div class="outer-carousel">
+                <div class="carousel">
+                    <!-- Images in the carousel -->
+                    <img src="media/crousel/carousel1.jpg">
+                    <img src="media/crousel/carousel2.jpg">
+                    <img src="media/crousel/carousel3.jpg">
+                </div>
+            </div>
+            <!-- Latest Releases Section -->
+            <div class="latest-release">
+                <h3 style="margin-bottom: 12px;">
+                    Latest Releases
+                </h3>
+                <!-- Content for the latest release section -->
+                <div class="latest-release-content">
+                    <!-- First Block -->
+                    <div class="blocks">
+                        <div>
+                            <!-- Image for the content block -->
+                            <img class="song-img" src="media/songs/admirin'_you.png">
+                            <div class="play-button">
+                                <!-- This is the play icon which will be displayed over the image on hover-->
+                                <!-- I've used the stacked class from FontAwesome to stack a play button 
+                                over a solid circle -->
+                                <span class="fa-stack fa-2x">
+                                    <i id="green_circle" class="fa-solid fa-circle fa-stack-2x green"></i>
+                                    <i class="fa-solid fa-play fa-stack-1x black"></i> 
+                                </span>
+                            </div>
+                        </div>
+                        <!-- Div to contain the name and date of release of song -->
+                        <div class="song-description">
+                            <h5 style="font-weight: 600;">
+                                Admirin' You
+                            </h5>
+                            <p class="lightgrey">
+                                Karan Aujla
+                            </p>
+                        </div>
+                        <!-- Triple dot icon for more options dropdown menu -->
+                        <div class="options">
+                            <div class="dropdown">
+                                <a href="#" class="dropbtn">
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                </a>
+                                <div class="dropdown-content">
+                                    <a href="#">Play Now</a>
+                                    <a href="#">Add to Queue</a>
+                                    <a href="#">About</a>
+                                </div>
+                            </div>
+                            <!-- Duration of the song -->
+                            <p class="lightgrey">
+                                2:49
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Second Block -->
+                    <div class="blocks">
+                        <div>
+                            <!-- Image for the content block -->
+                            <img class="song-img" src="media/songs/dilwara.png">
+                            <div class="play-button">
+                                <!-- This is the play icon which will be displayed over the image on hover-->
+                                <!-- I've used the stacked class from FontAwesome to stack a play button 
+                                over a solid circle -->
+                                <span class="fa-stack fa-2x">
+                                    <i id="green_circle" class="fa-solid fa-circle fa-stack-2x green"></i>
+                                    <i class="fa-solid fa-play fa-stack-1x black"></i> 
+                                </span>
+                            </div>
+                        </div>
+                        <!-- Div to contain the name and date of release of song -->
+                        <div class="song-description">
+                            <h5 style="font-weight: 600;">
+                                Dilwara
+                            </h5>
+                            <p class="lightgrey">
+                                Prophec, Ezu
+                            </p>
+                        </div>
+                        <!-- Triple dot icon for more options dropdown menu -->
+                        <div class="options">
+                            <div class="dropdown">
+                                <a href="#" class="dropbtn">
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                </a>
+                                <div class="dropdown-content">
+                                    <a href="#">Play Now</a>
+                                    <a href="#">Add to Queue</a>
+                                    <a href="#">About</a>
+                                </div>
+                            </div>
+                            <!-- Duration of the song -->
+                            <p class="lightgrey">
+                                3:12
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Third Block -->
+                    <div class="blocks">
+                        <div>
+                            <!-- Image for the content block -->
+                            <img class="song-img" src="media/songs/9_45.png">
+                            <div class="play-button">
+                                <!-- This is the play icon which will be displayed over the image on hover-->
+                                <!-- I've used the stacked class from FontAwesome to stack a play button 
+                                over a solid circle -->
+                                <span class="fa-stack fa-2x">
+                                    <i id="green_circle" class="fa-solid fa-circle fa-stack-2x green"></i>
+                                    <i class="fa-solid fa-play fa-stack-1x black"></i> 
+                                </span>
+                            </div>
+                        </div>
+                        <!-- Div to contain the name and date of release of song -->
+                        <div class="song-description">
+                            <h5 style="font-weight: 600;">
+                                9:45
+                            </h5>
+                            <p class="lightgrey">
+                                Prabh Singh, Jay Trak
+                            </p>
+                        </div>
+                        <!-- Triple dot icon for more options dropdown menu -->
+                        <div class="options">
+                            <div class="dropdown">
+                                <a href="#" class="dropbtn">
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                </a>
+                                <div class="dropdown-content">
+                                    <a href="#">Play Now</a>
+                                    <a href="#">Add to Queue</a>
+                                    <a href="#">About</a>
+                                </div>
+                            </div>
+                            <!-- Duration of the song -->
+                            <p class="lightgrey">
+                                1:58
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Fourth Block -->
+                    <div class="blocks">
+                        <div>
+                            <!-- Image for the content block -->
+                            <img class="song-img" src="media/songs/still_rolling.png">
+                            <div class="play-button">
+                                <!-- This is the play icon which will be displayed over the image on hover-->
+                                <!-- I've used the stacked class from FontAwesome to stack a play button 
+                                over a solid circle -->
+                                <span class="fa-stack fa-2x">
+                                    <i id="green_circle" class="fa-solid fa-circle fa-stack-2x green"></i>
+                                    <i class="fa-solid fa-play fa-stack-1x black"></i> 
+                                </span>
+                            </div>
+                        </div>
+                        <!-- Div to contain the name and date of release of song -->
+                        <div class="song-description">
+                            <h5 style="font-weight: 600;">
+                                Still Rollin'
+                            </h5>
+                            <p class="lightgrey">
+                                Shubh
+                            </p>
+                        </div>
+                        <!-- Triple dot icon for more options dropdown menu -->
+                        <div class="options">
+                            <div class="dropdown">
+                                <a href="#" class="dropbtn">
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                </a>
+                                <div class="dropdown-content">
+                                    <a href="#">Play Now</a>
+                                    <a href="#">Add to Queue</a>
+                                    <a href="#">About</a>
+                                </div>
+                            </div>
+                            <!-- Duration of the song -->
+                            <p class="lightgrey">
+                                3:04
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Fifth Block -->
+                    <div class="blocks">
+                        <div>
+                            <!-- Image for the content block -->
+                            <img class="song-img" src="media/songs/with_you_ap.png">
+                            <div class="play-button">
+                                <!-- This is the play icon which will be displayed over the image on hover-->
+                                <!-- I've used the stacked class from FontAwesome to stack a play button 
+                                over a solid circle -->
+                                <span class="fa-stack fa-2x">
+                                    <i id="green_circle" class="fa-solid fa-circle fa-stack-2x green"></i>
+                                    <i class="fa-solid fa-play fa-stack-1x black"></i> 
+                                </span>
+                            </div>
+                        </div>
+                        <!-- Div to contain the name and date of release of song -->
+                        <div class="song-description">
+                            <h5 style="font-weight: 600;">
+                                With You
+                            </h5>
+                            <p class="lightgrey">
+                                AP Dhillon
+                            </p>
+                        </div>
+                        <!-- Triple dot icon for more options dropdown menu -->
+                        <div class="options">
+                            <div class="dropdown">
+                                <a href="#" class="dropbtn">
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                </a>
+                                <div class="dropdown-content">
+                                    <a href="#">Play Now</a>
+                                    <a href="#">Add to Queue</a>
+                                    <a href="#">About</a>
+                                </div>
+                            </div>
+                            <!-- Duration of the song -->
+                            <p class="lightgrey">
+                                2:24
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Sixth Block -->
+                    <div class="blocks">
+                        <div>
+                            <!-- Image for the content block -->
+                            <img class="song-img" src="media/songs/you_jassa.png">
+                            <div class="play-button">
+                                <!-- This is the play icon which will be displayed over the image on hover-->
+                                <!-- I've used the stacked class from FontAwesome to stack a play button 
+                                over a solid circle -->
+                                <span class="fa-stack fa-2x">
+                                    <i id="green_circle" class="fa-solid fa-circle fa-stack-2x green"></i>
+                                    <i class="fa-solid fa-play fa-stack-1x black"></i> 
+                                </span>
+                            </div>
+                        </div>
+                        <!-- Div to contain the name and date of release of song -->
+                        <div class="song-description">
+                            <h5 style="font-weight: 600;">
+                                You
+                            </h5>
+                            <p class="lightgrey">
+                                Jassa Dhillon
+                            </p>
+                        </div>
+                        <!-- Triple dot icon for more options dropdown menu -->
+                        <div class="options">
+                            <div class="dropdown">
+                                <a href="#" class="dropbtn">
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                </a>
+                                <div class="dropdown-content">
+                                    <a href="#">Play Now</a>
+                                    <a href="#">Add to Queue</a>
+                                    <a href="#">About</a>
+                                </div>
+                            </div>
+                            <!-- Duration of the song -->
+                            <p class="lightgrey">
+                                2:49
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Latest Release section ends here -->
+            <!-- Popular Artists Section begins here -->
+            <div class="popular-artists">
+                <h3 style="margin-bottom: 20px">
+                    Popular Artists
+                </h3>
+                <!-- Content for the popular artists section-->
+                <div class="artist-content">
+                    <!-- List of Artists -->
+                    <!-- First Artist -->
+                    <a href="">
+                        <div>
+                            <img src="media/popular_artists/billie eilish.jpg">
+                            <div>
+                                <!-- This is the play icon which will be displayed over the image on hover-->
+                                <!-- I've used the stacked class from FontAwesome to stack a play button 
+                                over a solid circle -->
+                                <span class="fa-stack fa-2x">
+                                    <i id="green_circle" class="fa-solid fa-circle fa-stack-2x green"></i>
+                                    <i class="fa-solid fa-play fa-stack-1x black"></i> 
+                                </span>
+                            </div>
+                            <p>
+                                Billie Eilish
+                            </p>
+                        </div>
+                    </a>
+                    <!-- Second Artist -->
+                    <a href="single_album_playlist.html">
+                        <div>
+                            <img src="media/popular_artists/eminem.jpeg">
+                            <div>
+                                <!-- This is the play icon which will be displayed over the image on hover-->
+                                <!-- I've used the stacked class from FontAwesome to stack a play button 
+                                over a solid circle -->
+                                <span class="fa-stack fa-2x">
+                                    <i id="green_circle" class="fa-solid fa-circle fa-stack-2x green"></i>
+                                    <i class="fa-solid fa-play fa-stack-1x black"></i> 
+                                </span>
+                            </div>
+                            <p>
+                                Eminem
+                            </p>
+                        </div>
+                    </a>
+                    <!-- Third Artist -->
+                    <a href="single_album_playlist.html">
+                        <div>
+                            <img src="media/popular_artists/tegi.jpeg">
+                            <div>
+                                <!-- This is the play icon which will be displayed over the image on hover-->
+                                <!-- I've used the stacked class from FontAwesome to stack a play button 
+                                over a solid circle -->
+                                <span class="fa-stack fa-2x">
+                                    <i id="green_circle" class="fa-solid fa-circle fa-stack-2x green"></i>
+                                    <i class="fa-solid fa-play fa-stack-1x black"></i> 
+                                </span>
+                            </div>
+                            <p>
+                                Tegi Pannu
+                            </p>
+                        </div>
+                    </a>
+                    <!-- Fourth Artist -->
+                    <a href="single_album_playlist.html">
+                        <div>
+                            <img src="media/popular_artists/drake.jpg">
+                            <div>
+                                <!-- This is the play icon which will be displayed over the image on hover-->
+                                <!-- I've used the stacked class from FontAwesome to stack a play button 
+                                over a solid circle -->
+                                <span class="fa-stack fa-2x">
+                                    <i id="green_circle" class="fa-solid fa-circle fa-stack-2x green"></i>
+                                    <i class="fa-solid fa-play fa-stack-1x black"></i> 
+                                </span>
+                            </div>
+                            <p>
+                                Drake 
+                            </p>
+                        </div>
+                    </a>
+                    <!-- Fifth Artist -->
+                    <a href="single_album_playlist.html">
+                        <div>
+                            <img src="media/popular_artists/post_malone.png">
+                            <div>
+                                <!-- This is the play icon which will be displayed over the image on hover-->
+                                <!-- I've used the stacked class from FontAwesome to stack a play button 
+                                over a solid circle -->
+                                <span class="fa-stack fa-2x">
+                                    <i id="green_circle" class="fa-solid fa-circle fa-stack-2x green"></i>
+                                    <i class="fa-solid fa-play fa-stack-1x black"></i> 
+                                </span>
+                            </div>
+                            <p>
+                                Post Malone 
+                            </p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+                <!-- Music Genre/Theme Section  -->
+                <div class="music-genre-1">
+                    <div class="stations">
+                        <div id="div1">
+                            <div id="div2">
+                                <div id="div3">
+                                    <i class="fa-regular fa-circle-play white"></i>
+                                    <p>Stations</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <!-- Theme/Genre content starts here -->
+                    <div class="genre-main">
+                        <div class="genre-content">
+                            <img src="media/genre/workout.jpg">
+                            <p>GYM</p>
+                        </div>
+                        <div class="genre-content">
+                            <img src="media/genre/retro.jpg">
+                            <p>Retro</p>
+                        </div>
+                        <div class="genre-content">
+                            <img src="media/genre/chill.jpg">
+                            <p>Chill</p>
+                        </div>
+                        <div class="genre-content">
+                            <img src="media/genre/pop.jpg">
+                            <p>Pop</p>
+                        </div>
+                        <div class="genre-content">
+                            <img src="media/genre/love.jpg">
+                            <p>Love</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Music Genre Section 2 -->
+                <div class="music-genre-2">
+                    <div class="outer-div">
+                        <div class="inner-div">
+                            <span>party</span>
+                        </div>
+                    </div>
+                    <div class="outer-div">
+                        <div class="inner-div">
+                            <span>electronic</span>
+                        </div>
+                    </div>
+                    <div class="outer-div">
+                        <div class="inner-div">
+                            <span>travel</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Genre Section ends here -->
+                <!-- Music Based on language starts here -->
+                <!-- Since the layout will be the same they both share the same class name -->
+                <!-- English Section -->
+                <div class="language english">
+                    <h3 class="language-heading">
+                        Latest English
+                    </h3>
+                    <!-- Content inside latest english section starts here -->
+                    <div class="language-content">
+                        <div>
+                            <img src="media/latest_english/k_pop_travis.png">
+                            <p>K-Pop</p>
+                            <p class="lightgrey">July 21, 2023</p>
+                        </div>
+                        <div>
+                            <img src="media/latest_english/bad_idea_right_or.png">
+                            <p>bad idea right</p>
+                            <p class="lightgrey">August 11, 2023</p>
+                        </div>
+                        <div>
+                            <img src="media/latest_english/don't_think_twice.png">
+                            <p>Don't Think Twice</p>
+                            <p class="lightgrey">June 30, 2023</p>
+                        </div>
+                        <div>
+                            <img src="media/latest_english/Lipstick_charlie_puth.png">
+                            <p>Lipstick</p>
+                            <p class="lightgrey">August 18, 2023</p>
+                        </div>
+                        <div>
+                            <img src="media/latest_english/love_like_this.png">
+                            <p>Love Like This</p>
+                            <p class="lightgrey">July 21, 2023</p>
+                        </div>
+                        <div>
+                            <img src="media/latest_english/secrets_paul.png">
+                            <p>K-Pop</p>
+                            <p class="lightgrey">April 25, 2023</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Punjabi Section begins here -->
+                <div class="language punjabi">
+                    <h3 class="language-heading">
+                        Latest Punjabi
+                    </h3>
+                    <!-- Content inside latest english section starts here -->
+                    <div class="language-content">
+                        <div>
+                            <img src="media/songs/admirin'_you.png">
+                            <p>Admirin' You</p>
+                            <p class="lightgrey">August 1, 2023</p>
+                        </div>
+                        <div>
+                            <img src="media/songs/9_45.png">
+                            <p>9:45</p>
+                            <p class="lightgrey">March 10, 2023</p>
+                        </div>
+                        <div>                           
+                            <img src="media/songs/khayaal_talwinder.png">
+                            <p>Khayaal</p>
+                            <p class="lightgrey">March 16, 2023</p>                           
+                        </div>
+                        <div>
+                            <img src="media/songs/dilwara.png">
+                            <p>Dilwara</p>
+                            <p class="lightgrey">March 8, 2023</p>
+                        </div>
+                        <div>           
+                            <img src="media/songs/with_you_ap.png">
+                            <p>With You</p>
+                            <p class="lightgrey">August 11, 2023</p>
+                        </div>
+                        <div>
+                            <img src="media/songs/you_jassa.png">
+                            <p>You</p>
+                            <p class="lightgrey">August 7, 2023</p>
+                        </div>
+                    </div>
+                </div>
+        </aside>
+        <!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- Aside Section 1 ends here -->
+            <!-- This is a hamburger icon which will show up on the right side
+            of screen on screens <=900px -->
+            <label><a href="#section-2"><i class="fa-solid fa-bars"></i></a></label>
+            <!-- Aside Section 2 Starts Here-->
+            <aside class="aside section-2" id="section-2">
+                <!-- This is the close button/link which will close section-2
+                when clicked -->
+                <a href="#"><i class="fa-solid fa-xmark"></i></a>
+                <!-- Section heading -->
+                <div class="heading">
+                    <h4>
+                        Playlist
+                    </h4>
+                    <h3>
+                        Queue
+                    </h3>      
+                </div>
+                <!-- Content of the playlist starts here -->
+                <div class="playlist-content">
+                    <!-- Playlist Item -->
+                    <div class="playlist-item">
+                        <!-- content on the left -->
+                        <div class="left-content">
+                            <h5>
+                                1
+                            </h5>
+                            <div class="img-playbtn-wrapper">
+                                <!-- Image for the content block -->
+                                <img src="media/songs/still_rolling.png">
+                                <div class="play-button">
+                                    <!-- This is the play icon which will be displayed over the image on hover-->
+                                    <!-- I've used the stacked class from FontAwesome to stack a play button 
+                                    over a solid circle -->
+                                    <span class="fa-stack fa-2x">
+                                        <i id="green_circle" class="fa-solid fa-circle fa-stack-2x green"></i>
+                                        <i class="fa-solid fa-play fa-stack-1x black"></i> 
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="song-desc">
+                                <h5 style="font-weight: 500;">
+                                    Still Rollin'
+                                </h5>
+                                <p class="lightgrey">
+                                    Shubh
+                                </p>
+                            </div>
+                        </div>
+                        <!-- content on the right -->
+                        <div class="right-content">
+                            <i class="fa-regular fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="playlist-item">
+                        <!-- content on the left -->
+                        <div class="left-content">
+                            <h5>
+                                2
+                            </h5>
+                            <div class="img-playbtn-wrapper">
+                                <!-- Image for the content block -->
+                                <img src="media/songs/9_45.png">
+                                <div class="play-button">
+                                    <!-- This is the play icon which will be displayed over the image on hover-->
+                                    <!-- I've used the stacked class from FontAwesome to stack a play button 
+                                    over a solid circle -->
+                                    <span class="fa-stack fa-2x">
+                                        <i id="green_circle" class="fa-solid fa-circle fa-stack-2x green"></i>
+                                        <i class="fa-solid fa-play fa-stack-1x black"></i> 
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="song-desc">
+                                <h5 style="font-weight: 500;">
+                                    9:45
+                                </h5>
+                                <p class="lightgrey">
+                                    Prabh Singh
+                                </p>
+                            </div>
+                        </div>
+                        <!-- content on the right -->
+                        <div class="right-content">
+                            <i class="fa-regular fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="playlist-item">
+                        <!-- content on the left -->
+                        <div class="left-content">
+                            <h5>
+                                3
+                            </h5>
+                            <div class="img-playbtn-wrapper">
+                                <!-- Image for the content block -->
+                                <img src="media/songs/khayaal_talwinder.png">
+                                <div class="play-button">
+                                    <!-- This is the play icon which will be displayed over the image on hover-->
+                                    <!-- I've used the stacked class from FontAwesome to stack a play button 
+                                    over a solid circle -->
+                                    <span class="fa-stack fa-2x">
+                                        <i id="green_circle" class="fa-solid fa-circle fa-stack-2x green"></i>
+                                        <i class="fa-solid fa-play fa-stack-1x black"></i> 
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="song-desc">
+                                <h5 style="font-weight: 500;">
+                                    Khayaal
+                                </h5>
+                                <p class="lightgrey">
+                                    Talwinder
+                                </p>
+                            </div>
+                        </div>
+                        <!-- content on the right -->
+                        <div class="right-content">
+                            <i class="fa-regular fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="playlist-item">
+                        <!-- content on the left -->
+                        <div class="left-content">
+                            <h5>
+                                4
+                            </h5>
+                            <div class="img-playbtn-wrapper">
+                                <!-- Image for the content block -->
+                                <img src="media/songs/true stories_ap.png">
+                                <div class="play-button">
+                                    <!-- This is the play icon which will be displayed over the image on hover-->
+                                    <!-- I've used the stacked class from FontAwesome to stack a play button 
+                                    over a solid circle -->
+                                    <span class="fa-stack fa-2x">
+                                        <i id="green_circle" class="fa-solid fa-circle fa-stack-2x green"></i>
+                                        <i class="fa-solid fa-play fa-stack-1x black"></i> 
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="song-desc">
+                                <h5 style="font-weight: 500;">
+                                    True Stories
+                                </h5>
+                                <p class="lightgrey">
+                                    AP Dhillon
+                                </p>
+                            </div>
+                        </div>
+                        <!-- content on the right -->
+                        <div class="right-content">
+                            <i class="fa-regular fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="playlist-item">
+                        <!-- content on the left -->
+                        <div class="left-content">
+                            <h5>
+                                5
+                            </h5>
+                            <div class="img-playbtn-wrapper">
+                                <!-- Image for the content block -->
+                                <img src="media/songs/dilwara.png">
+                                <div class="play-button">
+                                    <!-- This is the play icon which will be displayed over the image on hover-->
+                                    <!-- I've used the stacked class from FontAwesome to stack a play button 
+                                    over a solid circle -->
+                                    <span class="fa-stack fa-2x">
+                                        <i id="green_circle" class="fa-solid fa-circle fa-stack-2x green"></i>
+                                        <i class="fa-solid fa-play fa-stack-1x black"></i> 
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="song-desc">
+                                <h5 style="font-weight: 500;">
+                                    Dilwara
+                                </h5>
+                                <p class="lightgrey">
+                                    Prophec
+                                </p>
+                            </div>
+                        </div>
+                        <!-- content on the right -->
+                        <div class="right-content">
+                            <i class="fa-regular fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="playlist-item">
+                        <!-- content on the left -->
+                        <div class="left-content">
+                            <h5>
+                                6
+                            </h5>
+                            <div class="img-playbtn-wrapper">
+                                <!-- Image for the content block -->
+                                <img src="media/latest_english/bad_idea_right_or.png">
+                                <div class="play-button">
+                                    <!-- This is the play icon which will be displayed over the image on hover-->
+                                    <!-- I've used the stacked class from FontAwesome to stack a play button 
+                                    over a solid circle -->
+                                    <span class="fa-stack fa-2x">
+                                        <i id="green_circle" class="fa-solid fa-circle fa-stack-2x green"></i>
+                                        <i class="fa-solid fa-play fa-stack-1x black"></i> 
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="song-desc">
+                                <h5 style="font-weight: 500;">
+                                    bad idea right
+                                </h5>
+                                <p class="lightgrey">
+                                    Olivia Rodriguez
+                                </p>
+                            </div>
+                        </div>
+                        <!-- content on the right -->
+                        <div class="right-content">
+                            <i class="fa-regular fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="playlist-item">
+                        <!-- content on the left -->
+                        <div class="left-content">
+                            <h5>
+                                7
+                            </h5>
+                            <div class="img-playbtn-wrapper">
+                                <!-- Image for the content block -->
+                                <img src="media/latest_english/don't_think_twice.png">
+                                <div class="play-button">
+                                    <!-- This is the play icon which will be displayed over the image on hover-->
+                                    <!-- I've used the stacked class from FontAwesome to stack a play button 
+                                    over a solid circle -->
+                                    <span class="fa-stack fa-2x">
+                                        <i id="green_circle" class="fa-solid fa-circle fa-stack-2x green"></i>
+                                        <i class="fa-solid fa-play fa-stack-1x black"></i> 
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="song-desc">
+                                <h5 style="font-weight: 500;">
+                                    Don't Think Twice
+                                </h5>
+                                <p class="lightgrey">
+                                    Rita Ora
+                                </p>
+                            </div>
+                        </div>
+                        <!-- content on the right -->
+                        <div class="right-content">
+                            <i class="fa-regular fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="playlist-item">
+                        <!-- content on the left -->
+                        <div class="left-content">
+                            <h5>
+                                8
+                            </h5>
+                            <div class="img-playbtn-wrapper">
+                                <!-- Image for the content block -->
+                                <img src="media/latest_english/Lipstick_charlie_puth.png">
+                                <div class="play-button">
+                                    <!-- This is the play icon which will be displayed over the image on hover-->
+                                    <!-- I've used the stacked class from FontAwesome to stack a play button 
+                                    over a solid circle -->
+                                    <span class="fa-stack fa-2x">
+                                        <i id="green_circle" class="fa-solid fa-circle fa-stack-2x green"></i>
+                                        <i class="fa-solid fa-play fa-stack-1x black"></i> 
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="song-desc">
+                                <h5 style="font-weight: 500;">
+                                    Lipstick
+                                </h5>
+                                <p class="lightgrey">
+                                    Charlie Puth
+                                </p>
+                            </div>
+                        </div>
+                        <!-- content on the right -->
+                        <div class="right-content">
+                            <i class="fa-regular fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="playlist-item">
+                        <!-- content on the left -->
+                        <div class="left-content">
+                            <h5>
+                                9
+                            </h5>
+                            <div class="img-playbtn-wrapper">
+                                <!-- Image for the content block -->
+                                <img src="media/latest_punjabi/check_it_out.png">
+                                <div class="play-button">
+                                    <!-- This is the play icon which will be displayed over the image on hover-->
+                                    <!-- I've used the stacked class from FontAwesome to stack a play button 
+                                    over a solid circle -->
+                                    <span class="fa-stack fa-2x">
+                                        <i id="green_circle" class="fa-solid fa-circle fa-stack-2x green"></i>
+                                        <i class="fa-solid fa-play fa-stack-1x black"></i> 
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="song-desc">
+                                <h5 style="font-weight: 500;">
+                                    Check It Out
+                                </h5>
+                                <p class="lightgrey">
+                                    Parmish Verma
+                                </p>
+                            </div>
+                        </div>
+                        <!-- content on the right -->
+                        <div class="right-content">
+                            <i class="fa-regular fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="playlist-item">
+                        <!-- content on the left -->
+                        <div class="left-content">
+                            <h5>
+                                10
+                            </h5>
+                            <div class="img-playbtn-wrapper">
+                                <!-- Image for the content block -->
+                                <img src="media/latest_english/k_pop_travis.png">
+                                <div class="play-button">
+                                    <!-- This is the play icon which will be displayed over the image on hover-->
+                                    <!-- I've used the stacked class from FontAwesome to stack a play button 
+                                    over a solid circle -->
+                                    <span class="fa-stack fa-2x">
+                                        <i id="green_circle" class="fa-solid fa-circle fa-stack-2x green"></i>
+                                        <i class="fa-solid fa-play fa-stack-1x black"></i> 
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="song-desc">
+                                <h5 style="font-weight: 500;">
+                                    K-Pop  
+                                </h5>
+                                <p class="lightgrey">
+                                    Travis Scott
+                                </p>
+                            </div>
+                        </div>
+                        <!-- content on the right -->
+                        <div class="right-content">
+                            <i class="fa-regular fa-heart"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </main>
+    <!-- Main section ends here -->
+    <!-- Footer starts here -->
+    <!-- This will be fixed at the bottom of the page-->
+    <footer>
+        <div class="active-song">
+            <!-- song image -->
+            <div id="active-song-image">
+                <img src="media/latest_english/k_pop_travis.png">
+            </div>
+            <!-- song name and description -->
+            <div class="active-song-desc">
+                <h6>
+                    K-Pop
+                </h6>
+                <p class="lightgrey">
+                    Travis Scott
+                </p>
+            </div>
+            <div class="heart-icon">
+                <i class="fa-solid fa-heart green"></i>
+            </div>
+        </div>
+        <!-- Player controls -->
+        <div class="player">
+            <div class="controls">
+                <div>
+                    <i class="fa-solid fa-shuffle hover-green"></i>
+                </div>
+                <div>
+                    <i class="fa-solid fa-backward-step hover-green"></i>
+                </div>
+                <div id="playbtn">
+                    <span class="fa-stack fa-2x">
+                        <i class="fa-solid fa-circle fa-stack-2x white"></i>
+                        <i class="fa-solid fa-play fa-stack-1x black"></i> 
+                    </span>
+                </div>
+                <div>
+                    <i class="fa-solid fa-forward-step hover-green"></i>
+                </div>
+                <div id="repeatbtn">
+                    <i class="fa-solid fa-repeat green"></i>
+                    <i class="fa-solid fa-circle green"></i>
+                </div> 
+            </div>
+            <!-- This is the slider -->
+            <div id="slider">
+                <div class="time">
+                    0:35
+                </div>
+                <div class="slider-container">
+                    <input type="range" min="0" max="100" value="30" class="slider">
+                </div>
+                <div class="time">
+                    3:09
+                </div>
+            </div>
+        </div>
+        <!-- Extra icons -->
+        <div class="extras">
+            <div>
+                <img src="media/microphone.png">
+            </div>
+            <div>
+                <i class="fa-solid fa-laptop hover-green"></i>
+            </div>
+            <div class="slider-container-2">
+                <i class="fa-solid fa-volume-high hover-green" style="margin-right:5px;"></i>
+                <input type="range" min="0" max="100" value="70" class="slider" id="x-slider">
+            </div>
+            <div>
+                <i class="fa-solid fa-up-right-and-down-left-from-center hover-green"></i>
+            </div>
+        </div>
+    </footer>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+  </html>

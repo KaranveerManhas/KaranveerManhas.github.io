@@ -1,0 +1,1089 @@
+
+:root {
+    
+    --background-color: rgb(20, 20, 20);
+    --block-color: rgb(34, 33, 33);
+    --nav-background-color: linear-gradient(0deg, rgb(20, 20, 20) 20%,rgb(54, 53, 53));
+    --music-genre-color: linear-gradient(90deg,rgb(134,57,176),rgb(253,33,30), rgb(252,171,67));
+    --footer-color: linear-gradient(70deg, rgb(100, 0, 100) 30%, rgb(5, 58, 123));
+    /* Trying different gradients    
+   --background-image: linear-gradient(-90deg, #662D8C , #ED1E79);
+   --color: linear-gradient(-90deg, #662D8C , #ED1E79); */
+
+}
+
+
+/* Body */
+body {
+    background-color: var(--background-color);
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    margin: 0px;
+}
+
+
+
+/* Navigation Section */
+.navigation {
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding-left: 5%;
+    padding-right: 5%;
+    transition: all ease-in-out 1s;
+    background-image: var(--nav-background-color);
+}
+
+/* Removing text-decoration of all links on the page */
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.navigation > div {
+    display: inline-block;
+}
+
+/* Animation for the website logo */
+
+@keyframes pulsating {
+    0% {
+        transform: scale(1.2);
+    }
+    50% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1.2);
+    }
+    
+}
+
+/* Music Player Icon and Heading Section */
+.mp_icon i {
+    margin-top: 5px;
+    font-size: 2.5rem;
+    animation-name: pulsating;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    /* Realized the below line wasn't necessary if I just make changes to the animation itself */
+    /* animation-direction: alternate; */
+}
+
+.logo-name-container > div {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Music Player Name Properties */
+.mp_name h2,h3 {
+    color: white;
+    margin:0;
+    line-height:1.6rem;
+    margin-left: 10px;
+}
+
+.fav h6 {
+    margin-top: 5px;
+    font-weight: 600;
+}
+
+/* Search Bar Section */
+
+.search_bar {
+    width: 20%;
+    position: relative;
+}
+
+.search_bar input {
+    width: 110%;
+    font-size: 13px;
+    text-decoration: none;
+    border-radius: 18px;
+    border: none;
+    padding: 7px;
+    font-weight: 500;
+    text-align: center;
+
+}
+
+.search_bar i {
+    color: grey;
+}
+
+.search_bar > div:nth-child(1) {
+    font-size: 1.2rem;
+    display: inline-block;
+    position: absolute;
+    width: min-content;
+    left: 5%;
+    top: 15%;
+}
+
+.search_bar > div:nth-child(3) {
+    font-size: 1.3rem;
+    display: inline-block;
+    position: absolute;
+    width: min-content;
+    right: -5%;
+    top: 10%;
+}
+
+.search_bar input:focus {
+    outline: none;
+}
+
+.search_bar input:hover {
+    outline: 2px solid whitesmoke;
+}
+
+/* Animation for Notification icon */
+@keyframes ringing-bell {
+    0% {
+        transform: rotate(-20deg);
+    }
+    50% {
+        transform: rotate(20deg);
+    }
+    100% {
+        transform: rotate(-20deg);
+    }
+}
+
+/* Notification Icon */
+.notification_icon i {
+    font-size:1.5rem;
+    animation-name: ringing-bell;
+    animation-iteration-count: infinite;
+    animation-duration:1s;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+    animation-delay: 2s;
+}
+
+.notification_icon span {
+    font-weight: 600;
+    padding-left: 10px;
+}
+
+.profile_container {
+    margin-top: 20px;
+}
+
+/* ---------------------------------------------------- */
+
+/* Main Section starts here */
+
+main {
+    width: 100%;
+    padding: 0% 2%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    transition: all ease-in-out 1s;
+    /* border: 1px solid white; */
+}
+
+/* Since there are two aside sections so I have created an aside class 
+    to handle similar properties between the two sections.*/
+.aside {
+    display: inline-block;
+    overflow: hidden;
+    /* border: 1px solid white; */
+}
+/* Section 1 of the main part */
+.section-1 {
+    width: 75%;
+    height: 75vh;
+    overflow:scroll;
+    overflow-x: hidden;
+}
+/* Overflow scrollbar display set to none for a better looking page */
+.section-1::-webkit-scrollbar {
+    display: none;
+
+}
+/* Section 2 of the main part ( Queue Section) */
+.section-2 {
+    width: 24%;
+    height: 74vh;
+}
+
+/* Aside section 1 outer carousel */
+.outer-carousel {
+    position: relative;
+    left: 10vw;
+    margin-top: 7%;
+    transition: all ease-in-out 1s;
+}
+/* Carousel Properties */
+.carousel {
+    position: absolute;
+    left: 2%;
+    width: 70%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    overflow: visible;
+    justify-content: space-around;
+}
+
+.carousel img {
+    height: 15vw;
+    width: 23.5vw;
+    transition: all cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.2s;
+}
+
+.carousel img:nth-child(1) {
+    position: relative;
+    left: 43vw;
+    z-index: 2;
+}
+
+.carousel img:nth-child(2) {
+    z-index: 3;
+}
+
+.carousel img:nth-child(3) {
+    position: relative;
+    right: 45vw;
+    z-index: 1;
+}
+
+/* Animations for Carousel Images */
+.carousel img:hover {
+    z-index: 4;
+    box-shadow: 0px 0px 12px 0.1px white;
+    width: 28vw;
+    height: 18vw;
+}
+
+/* Latest Release Section */
+
+.latest-release {
+    position: relative;
+    top: 19vw;
+    height: auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.latest-release-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:space-around;
+}
+
+.latest-release-content > div {
+    height: 110px;
+    width: 47%;
+    margin: 5px 0px;
+}
+
+/* Blocks is the general class I've used which will apply on all latest release 
+block */
+
+.blocks {
+    display: flex;
+    flex-direction: row;
+    transition: filter ease-in-out 0.1s;
+    background-color: var(--block-color);
+    padding: 5px;
+    border-radius: 5px;
+    transition: all ease-in-out 0.15s;
+}
+/* Enhancing brightness on hover to make it appear highlighted  */
+.blocks:hover {
+    filter: brightness(130%);
+}
+/* Song Image inside blocks class */
+.blocks img {
+    width: 100px;
+    height: 100px;
+    z-index: 1;
+}
+
+/* Play button Icon which will be visible on hover */
+.play-button {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: -100%;
+    left:0;
+    opacity: 0;
+    text-align: center;
+    z-index: 5;
+    transition: all ease-in-out 0.15s;
+    /* border: 1px solid white; */
+}
+/* Play button stacked icons */
+.play-button span {
+    font-size: 1.5rem;
+    position: absolute;
+    top:25%;
+    left: 20%;
+}
+
+/* Play button only shows up on hover */
+.play-button:hover {
+    cursor: pointer;
+    opacity: 0.9;
+	background-color: rgba(0, 0, 0, 0.5);
+
+}
+
+.song-description {
+    margin: auto 5%;
+}
+
+.song-description p {
+    font-size: 0.9rem;
+}
+/* Options class containing the dropdown menu and song duration */
+.options {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap-reverse;
+    text-align: right;
+    margin-left: auto;
+    margin-right: 2%;
+    margin-top: 2%;
+}
+
+.options p {
+    margin-top: 35%;
+    font-size: 0.9rem;
+}
+
+/* Dropdown menu CSS */
+.dropbtn {
+    /* background-color: #04AA6D; */
+    color: white;
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    right: 10%;
+    background-color: var(--block-color);
+    min-width: 130px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    padding: 5px 10px;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {
+    background-color: grey;
+}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+    }
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  /* Didn't like the look of it */
+  /* .dropdown:hover .dropbtn {background-color: #3e8e41;} */
+
+  /* Popular Artist Section */
+.popular-artists {
+    position: relative;
+    width: 100%;
+    height: auto;
+    top: 21vw;
+    box-sizing: border-box;
+}
+/* container for popular artists */
+.artist-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.popular-artists div a img {
+    width: 10vw;
+    min-width: 60px;
+    min-height: 60px;
+    height: 10vw;
+    border-radius: 50%;
+}
+
+.popular-artists > div {
+    margin: 5px;
+    text-align: center;
+}
+
+/* Positioning the div containing the image and play button */
+.artist-content > a > div {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items: center;
+    /* border: 1px solid white; */
+}
+
+.artist-content > a > div > div{
+    /* border: 1px solid white; */
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    min-width: 60px;
+    min-height: 60px;
+    width: 10vw;
+    height: 10vw;
+    opacity: 0;
+    transition: all ease-in-out 0.2s;
+}
+
+.artist-content > a > div > div span {
+    font-size: 1.5rem;
+}
+
+
+.artist-content > a > div > div:hover {
+    cursor: pointer;
+    opacity: 0.9;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Music Genre/Theme Section */
+.music-genre-1 {
+    position: relative;
+    top: 23vw;
+    width: 100%;
+    height: auto;
+    background-image: var(--footer-color);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Rectangles with different colours */
+.stations {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-right: 10px;
+}
+
+#div1 {
+    width: 12vw;
+    height: 8vw;
+    background-color: darkslateblue;
+}
+
+#div2 {
+    position: relative;
+    top: -1vw;
+    left: 1vw;
+    width: 10vw;
+    height: 10vw;
+    background-color: lightgreen;
+}
+
+#div3 {
+    position: relative;
+    top: -1vw;
+    left: 1vw;
+    width: 8vw;
+    height: 12vw;
+    background-color:orange;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#div3 i {
+    font-size: 4vw;
+}
+
+#div3 p {
+    font-size: 1.5vw;
+}
+
+/* Genre Content Section */
+
+/* Images */
+.music-genre-1 div img {
+    width: 8vw;
+    height: 8vw;
+    border-radius: 50%;
+}
+
+.genre-main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* This is the sub-section of the genre content */
+
+.genre-content {
+    margin: 3%;
+    width: 8vw;
+    height: 8vw;
+    text-align: center;
+    border-radius: 100%;
+}
+
+.genre-content p {
+    position: relative;
+    text-align: center;
+    top: -8vw;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5vw;
+    text-align: center;
+    border-radius: 100%;
+    background-image: linear-gradient(0deg,
+     rgb(201, 200, 185) -66%, rgba(0, 0, 0, 0));
+    
+     transition: background-image 0.2s;
+}
+
+.genre-content p:hover {
+    background-image: linear-gradient(0deg, rgb(255, 50, 10) -66%,
+    rgb(0,0,0,0));
+}
+
+/* Music Genre Section 2 */
+.music-genre-2 {
+    position: relative;
+    top: 25vw;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Outer div in music genre 2 */
+
+.outer-div {
+    width: 19vw;
+    height: 13vw;
+    overflow: hidden;
+    min-width: 123px;
+    min-height: 82px;
+    margin: 5px;
+    cursor: 5px;
+}
+
+/* Inner div section */
+.inner-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    background-position: center;
+    background-size: cover;
+    transition: all ease-in-out 0.3s;
+}
+
+.inner-div span {
+    font-size: 1.5vw;
+}
+
+
+
+/* Putting images in the inner divs */
+/* party */
+.music-genre-2 .outer-div:nth-child(1) .inner-div {
+    background-image: url(media/genre_2/party.jpg);
+}
+
+/* electronic */
+.music-genre-2 .outer-div:nth-child(2) .inner-div {
+    background-image: url(media/genre_2/electronic.jpg);
+}
+
+/* travel */
+.music-genre-2 .outer-div:nth-child(3) .inner-div {
+    background-image: url(media/genre_2/travel.jpg);
+}
+
+.outer-div:hover .inner-div {
+    transform: scale(1.2);
+}
+
+.outer-div .inner-div span {
+    transform: scale(1);
+    transition: all ease-in-out 0.3s;
+}
+.outer-div:hover .inner-div span {
+    transform: scale(0.85);
+
+}
+
+/* Language Section */
+/* Common class properties */
+
+.language {
+    position: relative;
+    top: 28vw;
+    height: auto;
+    width: 100%;
+    box-sizing: border-box;
+    /* margin: 3vw 0px; */
+    /* border: 1px solid white; */
+}
+
+.language h3 {
+    text-align: left;
+}
+
+.language-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0px 10px;
+}
+
+/* This will give the divs a spotify-like cards look */
+.language-content > div{
+    background-color: var(--block-color);
+    /* width: 10vw; */
+    /* border: 1px solid white; */
+    margin: 1vw 0;
+    padding: 15px 15px;
+    border-radius: 5px;
+    transition: all ease-in-out 0.1s; 
+}
+
+/* Image inside language content */
+.language-content div img {
+    width: 8vw;
+    min-width: 50px;
+    height: 8vw;
+    min-height: 50px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 7px 2px rgba(20, 20, 20, 0.466);
+    transition: all ease-in-out 0.1s;
+}
+
+.language-content div p {
+    text-align: left;
+    /* margin-left: 2px; */
+}
+/* The p tags containing the song name */
+.language-content div p:nth-child(2n) {
+    margin-top: 8px;
+    width: 100%;
+    word-wrap: break-word;
+    font-weight: 600;
+}
+/* The p tags containing the song release date */
+.language-content div p:nth-child(2n + 1) {
+    margin-top: -15px;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+
+.language-content > div:hover {
+    filter: brightness(120%);
+}
+
+.language-content div img:hover {
+    cursor: pointer;
+    opacity: 0.7;
+	background-color: rgb(0, 0, 0);
+}
+
+/* Language Section complete */
+/* Aside Section 1 ends here as well */
+/* Aside Section 2 begins */
+/* This lable wraps an a tag whick will display the 
+    queue section on a smaller screen */
+label {
+    position: absolute;
+    right: 2%;
+    top: 12%;
+    font-size: 1.5rem;
+    display: none;
+}
+
+/* This link will close the queue section on a smaller screen */
+.section-2 > a {
+    display: none;
+    /* visibility: hidden; */
+    position: absolute;
+    right: 3%;
+    /* top: 12%; */
+}
+
+.heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6%;
+    margin-top: 15%;
+}
+
+.heading h3 {
+    margin-right: 5%;
+}
+
+.playlist-content {
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    cursor: pointer;
+}
+
+.playlist-content::-webkit-scrollbar {
+    display: none;
+}
+
+.playlist-item {
+    width: 95%;
+    height: auto;
+    padding: 10px 0px;
+    box-sizing: border-box;
+    margin: 1%;
+    margin-bottom: 2%;
+    transition: all ease-in-out 0.1s; 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 5px;
+    background-color: var(--block-color);
+    /* border: 1px solid white; */
+
+}
+
+.playlist-item:hover {
+    filter: brightness(130%);
+}
+
+
+.playlist-item img {
+    width: 80px;
+    height: 80px;
+}
+
+.img-playbtn-wrapper {
+    width: 80px;
+    height: 80px;
+    /* border: 1px solid white; */
+}
+
+.left-content {
+    display: flex;
+    height: 100%;
+    width: 90%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.left-content > div:nth-child(3) {
+    margin-left: 0;
+    width: 50%;
+    word-wrap: break-word;
+}
+
+.left-content > h5 {
+    margin-left: 2%;
+    font-size: 0.9rem;
+    margin-right: 10px;
+}
+
+.img-playbtn-wrapper {
+    margin-right: 10px;
+}
+
+.left-content span {
+    font-size: 1rem;
+}
+
+.song-desc h5 {
+    font-size: 1rem;
+}
+
+.song-desc p {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* Right content section */
+.right-content {
+    width: min-content;
+    height: 20px;
+    font-size: 20px;
+    padding-right: 5px;
+    padding-bottom: 40px;
+}
+
+.right-content i {
+    transition: all ease-in-out 0.1s;
+}
+
+.right-content i:hover {
+    color: #1db954;
+}
+/* Aside section 2 ends here */
+
+/* Footer begins here */
+footer {
+    position: absolute;
+    bottom: 1px;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    box-sizing: border-box;
+    z-index: 6;
+    background-color: var(--background-color);
+    /* border: 1px solid white; */
+}
+
+.hover-green:hover {
+    color: rgb(29, 185, 84);
+}
+/* Active song div */
+.active-song {
+    width: 20%;
+    height: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    /* border: 1px solid white; */
+    flex-wrap: nowrap;
+}
+
+#active-song-image {
+    width: 60px;
+    height: 60px;
+    min-width: 50px;
+    min-width: 50px;
+    border-radius: 5px;
+}
+
+#active-song-image img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.active-song-desc p {
+    font-size: 12px;
+}
+
+/* Player controls div */
+
+.player {
+    width: 45%;
+    /* border: 1px solid white; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* song controls */
+.controls {
+    width: 40%;
+    /* border: 1px solid white; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#playbtn span {
+    font-size: 0.9rem;
+}
+#repeatbtn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#repeatbtn .fa-circle {
+    margin-top: 5px;
+    font-size: 0.3rem;
+}
+
+/* song slider */
+
+#slider {
+    width: 100%;
+    font-size: 12px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.time {
+    margin: 0px 10px;
+}
+
+.slider-container {
+    width: 100%;
+}
+
+.slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 5px;
+    background: rgba(211, 211, 211, 0.411);
+    outline: none;
+    -webkit-transition: 0.2s;
+    transition: opacity 0.2s;
+    border-radius: 3px;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+}
+
+/* Extra Icons */
+
+.extras {
+    position: relative;
+    right: 2%;
+    width: 15%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    /* border: 1px solid white; */
+}
+/* This is the lyrics icon  */
+.extras img {
+    width: 20px;
+    height: 20px;
+}
+
+/* volume control container */
+.slider-container-2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+/* This second slider is for volume */
+#x-slider {
+    background: white;
+}
+/* Makes it look like the volume is full */
+#x-slider::-webkit-slider-thumb {
+    background: none;
+}
+/* Footer ends here */
+
+/* Font Classes */
+
+.rem2 {
+    font-size: 2rem;
+}
+
+.rem3 {
+    font-size: 3rem;
+}
+
+/* Color Classes */
+
+.grey {
+    color: #808080;
+}
+
+/* LightGrey for elements in side blocks  */
+.lightgrey {
+    color: rgba(211, 211, 211, 0.842);
+}
+.block-black {
+    color: rgb(53, 52, 52);
+}
+
+.black {
+    color: black;
+}
+.green {
+    color: rgb(29, 185, 84);
+}
+
+/* Original Color Scheme as shown in project template */
+/* Unused */
+.search-bar-blue {
+    background-color: #101a3d;
+}
+/* Original Color Scheme as shown in project template */
+/* Unused */
+.body-blue {
+    background-color: #0b1127;
+}
+
+.white {
+    color: white;
+}

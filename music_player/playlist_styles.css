@@ -1,0 +1,727 @@
+:root {
+    
+    --background-color: rgb(20, 20, 20);
+    --block-color: rgb(34, 33, 33);
+    --nav-background-color: linear-gradient(0deg, rgb(20, 20, 20) 20%,rgb(54, 53, 53));
+    --music-genre-color: linear-gradient(90deg,rgb(134,57,176),rgb(253,33,30), rgb(252,171,67));
+    --footer-color: linear-gradient(70deg, rgb(100, 0, 100) 30%, rgb(5, 58, 123));
+    /* Trying different gradients    
+   --background-image: linear-gradient(-90deg, #662D8C , #ED1E79);
+   --color: linear-gradient(-90deg, #662D8C , #ED1E79); */
+
+}
+
+
+/* Body */
+body {
+    background-color: var(--background-color);
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    margin: 0px;
+    transition: all ease-in-out 0.1s;
+}
+
+
+
+/* Navigation Section */
+.navigation {
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding-left: 5%;
+    padding-right: 5%;
+    transition: all ease-in-out 1s;
+    background-image: var(--nav-background-color);
+}
+
+/* Removing text-decoration of all links on the page */
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.navigation > div {
+    display: inline-block;
+}
+
+/* Animation for the website logo */
+
+@keyframes pulsating {
+    0% {
+        transform: scale(1.2);
+    }
+    50% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1.2);
+    }
+    
+}
+
+/* Music Player Icon and Heading Section */
+.mp_icon i {
+    margin-top: 5px;
+    font-size: 2.5rem;
+    animation-name: pulsating;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    /* Realized the below line wasn't necessary if I just make changes to the animation itself */
+    /* animation-direction: alternate; */
+}
+
+.logo-name-container > div {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Music Player Name Properties */
+.mp_name h2,h3 {
+    color: white;
+    margin:0;
+    line-height:1.6rem;
+    margin-left: 10px;
+}
+
+.fav h6 {
+    margin-top: 5px;
+    font-weight: 600;
+}
+
+/* Search Bar Section */
+
+.search_bar {
+    width: 20%;
+    position: relative;
+}
+
+.search_bar input {
+    width: 110%;
+    font-size: 13px;
+    text-decoration: none;
+    border-radius: 18px;
+    border: none;
+    padding: 7px;
+    font-weight: 500;
+    text-align: center;
+
+}
+
+.search_bar i {
+    color: grey;
+}
+
+.search_bar > div:nth-child(1) {
+    font-size: 1.2rem;
+    display: inline-block;
+    position: absolute;
+    width: min-content;
+    left: 5%;
+    top: 15%;
+}
+
+.search_bar > div:nth-child(3) {
+    font-size: 1.3rem;
+    display: inline-block;
+    position: absolute;
+    width: min-content;
+    right: -5%;
+    top: 10%;
+}
+
+.search_bar input:focus {
+    outline: none;
+}
+
+.search_bar input:hover {
+    outline: 2px solid whitesmoke;
+}
+
+/* Animation for Notification icon */
+@keyframes ringing-bell {
+    0% {
+        transform: rotate(-20deg);
+    }
+    50% {
+        transform: rotate(20deg);
+    }
+    100% {
+        transform: rotate(-20deg);
+    }
+}
+
+/* Notification Icon */
+.notification_icon i {
+    font-size:1.5rem;
+    animation-name: ringing-bell;
+    animation-iteration-count: infinite;
+    animation-duration:1s;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+    animation-delay: 2s;
+}
+
+.notification_icon span {
+    font-weight: 600;
+    padding-left: 10px;
+}
+
+.profile_container {
+    margin-top: 20px;
+}
+
+/* ---------------------------------------------------- */
+
+/* Main Section starts here */
+
+main {
+    width: 100%;
+    padding: 0% 2%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    transition: all ease-in-out 1s;
+    /* border: 1px solid white; */
+}
+
+/* Since there are two aside sections so I have created an aside class 
+    to handle similar properties between the two sections.*/
+.aside {
+    display: inline-block;
+    overflow: hidden;
+    /* border: 1px solid white; */
+}
+/* Section 1 of the main part */
+.section-1 {
+    width: 75%;
+    height: 86vh;
+    overflow:scroll;
+    overflow-x: hidden;
+}
+/* Overflow scrollbar display set to none for a better looking page */
+.section-1::-webkit-scrollbar {
+    display: none;
+
+}
+/* Section 2 of the main part ( Queue Section) */
+.section-2 {
+    width: 24%;
+    height: 86vh;
+}
+
+/* Aside section 1 starts here */
+/* Jumbotron */
+.jumbotron {
+	height: 20vw;
+	width: 100%;
+	margin-top: 12px;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	background-color: var(--jumbotron-color);
+	margin-bottom: 40px;
+	position: relative;
+}
+/* image insider jumbotron */
+.jumbotron-image {
+	height: 20vw;
+	width: 20vw;
+	background-image: linear-gradient(
+			to bottom,
+			transparent,
+			rgba(20, 27, 65, 1)
+		),
+		url("media/songs/admirin\'_you.png");
+	background-size: cover;
+}
+/* right part of the jumbotron */
+.jumbotron-detail {
+	width: 67%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	box-sizing: border-box;
+	padding-right: 12px;
+}
+/* descriptive part contains the descripton of the song and action part contains the follow and play buttons */
+.descriptive-part,
+.action-part {
+	width: 100%;
+	height: max-content;
+}
+/* song name and followers */
+.song-name-main,
+.followers {
+	display: inline-block;
+}
+/* song name heading properties */
+.song-name-main h1 {
+	font-size: 2vw;
+}
+/* follower count */
+.followers {
+	position: absolute;
+	right: 0%;
+	top: 5%;
+}
+/* self explanatory */
+.followers,
+.author {
+	font-size: 1.5vw;
+}
+/* description of the jumbotron */
+.desc {
+	font-size: 1vw;
+}
+/* action part */
+/* .action-part {
+	padding-top: 2vw;
+} */
+.action-part p {
+	font-size: 1vw;
+}
+.btns > button {
+	border: 0px;
+	height: 3vw;
+	width: 10vw;
+	/* color: white; */
+	font-size: 1.2vw;
+}
+/* play button
+.btns > button:nth-child(1) {
+	background-image: linear-gradient(-19deg, red 0%, blue 100%);
+}
+/* follow button */
+/* .btns > button:nth-child(2) {
+	background-color: transparent;
+} */ 
+/* Jumbotron ends here */
+/* Playlist starts here */
+.playlist-item {
+	/* height:60px;
+    width:100%; */
+	height: auto;
+    /* border: 1px solid white; */
+	box-sizing: border-box;
+	background-color: var(--block-color);
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 5px;
+    border-radius: 5px;
+	/* transition: all ease-in-out 0.1s; */
+}
+
+/* Adjusting font size */
+.playlist-item h5 {
+    font-size: 0.9rem;
+    line-height: 0.5rem;
+}
+/* playlist item hovering effects */
+.playlist-item:hover {
+	filter: brightness(120%);
+}
+/* left part of the playlist item */
+.left {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	width: 30%;
+	height: 100%;
+	padding: 0% 1%;
+    /* border: 1px solid white; */
+}
+
+.left div:nth-child(3) {
+    margin-top: 4%;
+}
+
+#recently-played .list .playlist-item .left {
+    /* border: 1px solid white; */
+    width: 70%;
+}
+
+#recently-played .list .playlist-item .left div:nth-child(3) {
+    margin-top: 10%;
+    width:fit-content;
+    /* border: 1px solid white; */
+}
+
+/* center part of the playlist item which contains the duration length of the song */
+.center {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: min-content;
+	height: 100%;
+}
+/* right part of the playlist item, which contains icons */
+.right {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: 50px;
+	height: 100%;
+	padding-right: 2%;
+}/* now adjusting the contents of left, center and right parts */
+.left > div:nth-child(2) {
+	height: 80%;
+	min-width: 50px;
+	max-width: 50px;
+	margin: 5px 12% 0px 12%;
+	position: relative;
+}
+.left > div:nth-child(2) img {
+	width: 100%;
+	height: 100%;
+    border-radius: 5px;
+}
+.left > div:nth-child(3) p {
+    font-size: 0.7rem;
+	color: rgb(185, 185, 185);
+}
+/* customizing the play button */
+.play-btn {
+	background-color: black;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	opacity: 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	transition: all ease-in-out 0.1s;
+}
+/* on hover effects */
+.play-btn:hover {
+	opacity: 0.7;
+}
+/* adjusting fonts in the playlist items  */
+
+.center {
+	font-size: 12px;
+	color: rgb(185, 185, 185);
+}
+.right {
+	color: rgb(185, 185, 185);
+}
+.right div:nth-child(2) {
+	margin-left: 27%;
+}
+/* Aside section 1 ends */
+/* Aside Section 2 begins */
+/* This lable wraps an a tag whick will display the 
+    queue section on a smaller screen */
+label {
+    position: absolute;
+    right: 2%;
+    top: 30%;
+    font-size: 1.5rem;
+    display: none;
+}
+
+/* This link will close the queue section on a smaller screen */
+.section-2 > a {
+    display: none;
+    /* visibility: hidden; */
+    position: absolute;
+    right: 3%;
+    /* top: 5%; */
+}
+
+
+.section-heading {
+    margin-top: 10px;
+    position: relative;
+    margin-bottom: 12px;
+}
+/* adjusting for side by side display */
+.section-heading div,
+.section-heading h1 {
+    display: inline-block;
+}
+.section-heading h1 {
+    font-size: 20px;
+}
+.section-heading div {
+    position: absolute;
+    bottom: 0%;
+    right: 0px;
+    font-size: 14px;
+}
+
+.list {
+    height: 36vh;
+    overflow: scroll;
+}
+/* hiding the scrollbar */
+.list::-webkit-scrollbar {
+    display: none;
+}
+/* this is particular item in the "list  container*/
+.list-item {
+    width: 100%;
+    height: 100px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin-bottom: 12px;
+}
+/* hovering effect for the list item */
+.list-item:hover {
+    background-color: var(--block-color);
+}
+/* adjusting the name and image of the songs relative to their original position */
+.list-item > div:nth-child(1) {
+    width: 100px;
+    height: 100%;
+    position: relative;
+}
+.list-item > div:nth-child(1) > img {
+    width: 100%;
+    height: 100%;
+}
+.author-name {
+    font-size: 12px;
+    color: rgb(185, 185, 185);
+}
+
+.extra {
+    text-align: right;
+    height: 100%;
+}
+
+/* Footer begins here */
+footer {
+    position: absolute;
+    bottom: 1px;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    box-sizing: border-box;
+    z-index: 6;
+    background-color: var(--background-color);
+    /* border: 1px solid white; */
+}
+
+.hover-green:hover {
+    color: rgb(29, 185, 84);
+}
+/* Active song div */
+.active-song {
+    width: 20%;
+    height: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    /* border: 1px solid white; */
+    flex-wrap: nowrap;
+}
+
+#active-song-image {
+    width: 60px;
+    height: 60px;
+    min-width: 50px;
+    min-width: 50px;
+    border-radius: 5px;
+}
+
+#active-song-image img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.active-song-desc p {
+    font-size: 12px;
+}
+
+/* Player controls div */
+
+.player {
+    width: 45%;
+    /* border: 1px solid white; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* song controls */
+.controls {
+    width: 40%;
+    /* border: 1px solid white; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#playbtn span {
+    font-size: 0.9rem;
+}
+#repeatbtn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#repeatbtn .fa-circle {
+    margin-top: 5px;
+    font-size: 0.3rem;
+}
+
+/* song slider */
+
+#slider {
+    width: 100%;
+    font-size: 12px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.time {
+    margin: 0px 10px;
+}
+
+.slider-container {
+    width: 100%;
+}
+
+.slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 5px;
+    background: rgba(211, 211, 211, 0.411);
+    outline: none;
+    -webkit-transition: 0.2s;
+    transition: opacity 0.2s;
+    border-radius: 3px;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+}
+
+/* Extra Icons */
+
+.extras {
+    position: relative;
+    right: 2%;
+    width: 15%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    /* border: 1px solid white; */
+}
+/* This is the lyrics icon  */
+.extras img {
+    width: 20px;
+    height: 20px;
+}
+
+/* volume control container */
+.slider-container-2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+/* This second slider is for volume */
+#x-slider {
+    background: white;
+}
+/* Makes it look like the volume is full */
+#x-slider::-webkit-slider-thumb {
+    background: none;
+}
+/* Footer ends here */
+
+/* Font Classes */
+
+.rem2 {
+    font-size: 2rem;
+}
+
+.rem3 {
+    font-size: 3rem;
+}
+
+/* Color Classes */
+
+.grey {
+    color: #808080;
+}
+
+/* LightGrey for elements in side blocks  */
+.lightgrey {
+    color: rgba(211, 211, 211, 0.842);
+}
+.block-black {
+    color: rgb(53, 52, 52);
+}
+
+.black {
+    color: black;
+}
+.green {
+    color: rgb(29, 185, 84);
+}
+
+/* Original Color Scheme as shown in project template */
+/* Unused */
+.search-bar-blue {
+    background-color: #101a3d;
+}
+/* Original Color Scheme as shown in project template */
+/* Unused */
+.body-blue {
+    background-color: #0b1127;
+}
+
+.white {
+    color: white;
+}

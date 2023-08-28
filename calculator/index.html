@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <title>Calculator Project</title>
+    </head>
+    <body>
+        <section class="wrapper">
+            <div class="calculator">
+                <div class="textarea">
+                    <p id="display"></p>
+                </div>
+                <div class="operations">
+                    <table>
+                        <tr>
+                            <th><div data-value="AC" class="button">AC</div></th>
+                            <th><div data-value="+/-" class="button">+/-</div></th>
+                            <th><div data-value="%" class="button">%</div></th>
+                            <th class="col-4"><div data-value="/" class="button">/</div></th>
+                        </tr>
+                        <tr>
+                            <td><div data-value="7" class="button">7</div></td>
+                            <td><div data-value="8" class="button">8</div></td>
+                            <td><div data-value="9" class="button">9</div></td>
+                            <td class="col-4" ><div data-value="*" class="button">*</div></td>
+                        </tr>
+                        <tr>
+                            <td><div data-value="4" class="button">4</div></td>
+                            <td><div data-value="5" class="button">5</div></td>
+                            <td><div data-value="6" class="button">6</div></td>
+                            <td class="col-4"><div data-value="-" class="button">-</div></td>
+                        </tr>
+                        <tr>
+                            <td><div data-value="1" class="button">1</div></td>
+                            <td><div data-value="2" class="button">2</div></td>
+                            <td><div data-value="3" class="button">3</div></td>
+                            <td class="col-4"><div data-value="+" class="button">+</div></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><div data-value="0" class="button">0</div></td>
+                            <td><div data-value="." class="button">.</div></td>
+                            <td class="col-4"><div data-value="=" class="button">=</div></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <script src="script.js"></script>
+    </body>
+</html>

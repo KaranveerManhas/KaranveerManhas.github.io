@@ -1,0 +1,106 @@
+@media screen and (max-width: 1200px) {
+    /* Size of search bar will be reduced */
+    .search_bar {
+        width: 30%;
+    }
+
+    input {
+        font-size: 11px !important;
+    }
+}
+
+@media screen and (max-width:900px) {
+    /* section 2 will acquire a little more 
+    space to display elements properly */
+    .section-2 {
+        display: none;
+        position: absolute;
+        width: 350px;
+        height: 670px;
+        top: 10%;
+        right: 0;
+        z-index: 8;
+        background-color: var(--background-color);
+        border-radius: 5px;
+    }
+    /* Section 1 will occupy all the width available*/
+    .section-1 {
+        width: 100%;
+        justify-content: center;
+    }
+    /* Button to show queue */
+    label {
+        display: block;
+    }
+    /* Hover effect on button */
+    label > a:hover {
+        color: rgb(29, 185, 84);
+    }
+    /* Showing section 2 when label icon is clicked */
+    #section-2:target {
+        display: inline-block;
+    }
+    /* This is the icon to close the queue section */
+    .section-2 > a {
+        display: block;
+        font-size: 1.3rem;
+    }
+
+    .section-2 > a:hover {
+        color: rgb(29, 185, 84);
+    }
+    /* ////////////// */
+    /* Adjusting navbar elements */
+    .mp_icon i {
+        font-size: 1.8rem;
+    }
+
+    .mp_name h2 {
+        font-size: 1.2rem;
+    }
+
+    .mp_name h3 {
+        font-size: 1rem;
+        line-height: 0.9rem;
+    }
+
+    .fav {
+        font-size: 0.8rem;
+    }
+    .search_bar {
+        width: 20%;
+    }
+
+    .notification_icon i {
+        font-size: 1rem;
+    }
+
+    .notification_icon span {
+        font-size: 0.9rem;
+    }
+
+    .profile_container {
+        font-size: 10px;
+        margin-top: 0.3rem;
+    }
+    /* ///////////////////// */
+    /* These are the ones in the latest release section */
+    .blocks {
+        min-width: 250px;
+    }
+
+    .music-genre-1 {
+        margin: auto;
+        justify-content: space-evenly;
+    }
+    /* Adjusting footer divs to look better */
+    /* extra icons on the right */
+    .extras {
+        min-width: 200px;
+    }
+    /* active song container */
+    .active-song {
+        min-width: 200px;
+    }
+
+}

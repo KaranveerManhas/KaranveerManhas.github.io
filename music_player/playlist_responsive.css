@@ -1,0 +1,87 @@
+@media screen and (max-width: 1200px) {
+    /* Size of search bar will be reduced */
+    .search_bar {
+        width: 30%;
+    }
+
+    input {
+        font-size: 11px !important;
+    }
+}
+
+@media screen and (max-width:900px) {
+    /* section 2 will acquire a little more 
+    space to display elements properly */
+    .section-2 {
+        display: none;
+        position: absolute;
+        width: 400px;
+        height: 550px;
+        top: 10%;
+        right: 2%;
+        padding: 10px 1%;
+        z-index: 8;
+        background-color: var(--background-color);
+        border-radius: 5px;
+    }
+
+    .section-1 {
+        width: 100%;
+    }
+
+    label {
+        display: block;
+    }
+
+    label > a:hover {
+        color: rgb(29, 185, 84);
+    }
+
+    #section-2:target {
+        display: inline-block;
+    }
+
+    .section-2 > a {
+        display: block;
+        font-size: 1.3rem;
+    }
+
+    .section-2 > a:hover {
+        color: rgb(29, 185, 84);
+    }
+
+    .mp_icon i {
+        font-size: 1.8rem;
+    }
+
+    .mp_name h2 {
+        font-size: 1.2rem;
+    }
+
+    .mp_name h3 {
+        font-size: 1rem;
+        line-height: 0.9rem;
+    }
+
+    .fav {
+        font-size: 0.8rem;
+    }
+    .search_bar {
+        width: 20%;
+    }
+
+    .notification_icon i {
+        font-size: 1rem;
+    }
+
+    .notification_icon span {
+        font-size: 0.9rem;
+    }
+
+    .profile_container {
+        font-size: 10px;
+        margin-top: 0.3rem;
+    }
+
+
+}
