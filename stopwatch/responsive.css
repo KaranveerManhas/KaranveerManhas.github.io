@@ -1,0 +1,105 @@
+/* First breakpoint at 768px, which will apply the following styles when screen
+size exceeds or is equal to 768 pixels */
+@media screen and (min-width: 700px) {
+    .wrapper {
+        flex-basis: 60%;
+        height: 350px;
+        padding: 40px 50px;
+    }
+
+    .timer-container {
+        width: 100%;
+        padding: 30px 60px;
+        font-size: 35px;
+    }
+
+    .timer-container h2 {
+        width: 70px;
+    }
+
+    #hr::after {
+        content: "hr";
+        margin-left: 2px;
+        font-size: 18px;
+    }
+    
+    #min::after {
+        content: "min";
+        margin-left: 2px;
+        font-size: 18px;
+    }
+    
+    #sec::after {
+        content: "sec";
+        margin-left: 2px;
+        font-size: 18px;
+    }
+    
+
+    .colon {
+        margin-top: -7px;
+    }
+
+    .timer-buttons {
+        width: 100%;
+        height: 75px;
+    }
+
+    .timerbtn {
+        font-size: 25px;
+    }
+}
+
+/* Second breakpoint at 1200px, which will apply the following styles when screen
+size exceeds or is equal to 1200 pixels */
+@media screen and (min-width: 1200px) {
+    .wrapper {
+        flex-basis: 50%;
+        height: 450px;
+        padding: 60px 80px;
+    }
+
+    .timer-container {
+        width: 100%;
+        padding: 30px 90px;
+        font-size: 45px;
+    }
+
+
+
+    .timer-container h2 {
+        width: 85px;
+    }
+
+    #hr::after {
+        content: "hr";
+        margin-left: 2px;
+        font-size: 25px;
+    }
+    
+    #min::after {
+        content: "min";
+        margin-left: 2px;
+        font-size: 25px;
+    }
+    
+    #sec::after {
+        content: "sec";
+        margin-left: 2px;
+        font-size: 25px;
+    }
+
+    .colon {
+        margin-top: -9px;
+    }
+
+    .timer-buttons {
+        width: 100%;
+        height: 95px;
+    }
+
+    .timerbtn {
+        padding: 10px 30px;
+        font-size: 35px;
+    }
+}

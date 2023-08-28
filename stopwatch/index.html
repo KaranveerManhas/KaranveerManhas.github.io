@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Responsive stylesheet -->
+    <link rel="stylesheet" href="responsive.css">
+    <!-- Dosis Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@500;600&display=swap" rel="stylesheet">
+    <!-- Title -->
+    <title>Stopwatch || By Karanveer Singh</title>
+</head>
+<body>
+    <!-- This div contains the display timer div and the buttons container -->
+    <div class="wrapper">
+        <!-- Display Timer -->
+        <div class="timer-container">
+            <h2 id="hr" class="timer">00</h2>
+            <h2 class="colon">:</h2>
+            <h2 id="min" class="timer">00</h2>
+            <h2 class="colon">:</h2>
+            <h2 id="sec" class="timer">00</h2>
+        </div>
+        <!-- Timer buttons -->
+        <div class="timer-buttons">
+            <button class="timerbtn" onclick="start()">Start</button>
+            <button class="timerbtn" onclick="stop()">Stop</button>
+            <button class="timerbtn" onclick="reset()">Reset</button>
+        </div>
+    </div>
+    <!-- Javascript file for stopwatch functionality -->
+    <script src="script.js"></script>
+</body>
+</html>
