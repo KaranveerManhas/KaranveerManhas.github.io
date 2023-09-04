@@ -1,0 +1,678 @@
+/* Importing google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+/* Creating variables for later use */
+:root {
+    --imdb-color: #dbb90e;
+}
+
+/* Custom scrollbar for page */
+::-webkit-scrollbar {
+    background: transparent;
+    width: 13px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #2c2c2c;
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #464646;
+}
+
+/* Html */
+html {
+    box-sizing: border-box;
+    height: 100%;
+}
+
+/* Selecting all elements of document */
+*, *::before, *::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body */
+body {
+    height: inherit;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Settings text decoration of all links on page to none */
+body a, i{
+    text-decoration: none;
+    color: white;
+}
+
+
+/* Navigation Bar Starts here */
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: #121212;
+    padding: 0.7rem 10%;
+}
+
+
+/* IMDb logo which is just text inside a yellow coloured div */
+#imdbLogo {
+    overflow: hidden;
+    background-color: #dbb90e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    padding: 0 5px;
+}
+/* IMDb text */
+#imdbLogo span {
+    font-size: 1.4rem;
+    font-family: 'impact-regular', sans-serif;
+    font-weight: 900;
+    letter-spacing: -2px;
+    transform: scale(1,1.1);
+}
+
+/* Search bar starts here */
+.search-container{
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid white; */
+}
+
+.search-element{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    /* border: 1px solid red; */
+    width: 100%;
+}
+
+.search-element .form-control{
+    font-size: 0.9rem;
+    border: none;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    outline: none;
+    width: 100%;
+}
+/* This is the search list that will have elements added to it through 
+Javascript on input */
+.search-list{
+    /* border: 1px solid white; */
+    position: absolute;
+    right: 0;
+    top: 100%;
+    width: 100%;
+    max-height: 500px;
+    overflow-y: scroll;
+    z-index: 10;
+}
+
+/* This is a class that hides the search list */
+.hide-search-list {
+    display: none;
+}
+
+/* Individual search list items */
+.search-list .search-list-item{
+    /* padding: 0.5rem; */
+    width: 100%;
+    color: #fff;
+    background-color: #1a1a1a;
+    display: flex;
+    align-items: center;
+    /* border: 1px solid white; */
+}
+
+/* On hover search list item will have a lighter background color*/
+.search-list .search-list-item:hover{
+    background-color: #1f1f1f;
+}
+
+
+
+/* This is the univeral class for adding movies, 
+shows etc to watchlist from the search bar */
+.watchlist-add {
+    position: absolute;
+    width: 50px;
+    right: 5%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    /* background: red; */
+    /* border: 1px solid white; */
+}
+
+.watchlist-add > i:hover {
+    color: var(--imdb-color);
+}
+
+.watchlist-add > i:active {
+    color: white;
+}
+
+/* Search result image */
+.search-item-thumbnail img{
+    width: 50px;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+/* Details about the search results */
+.search-item-info:hover {
+    cursor: pointer;
+}
+.search-item-info h3{
+    font-weight: 600;
+    font-size: 1rem;
+}
+.search-item-info p{
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    font-weight: 600;
+    opacity: 0.6;
+}
+
+/* This is the wrapper class for the search bar */
+.search-container:hover {
+    outline: 3px solid rgb(12, 136, 177);
+    border-radius: 8px;
+}
+
+/* Search bar ends */
+
+/* //////////////////////////////////////////////////////////////////////////////////////*/
+
+/* This is the vertical line that separates the IMDb Pro logo 
+and the watchlist and sign in divs*/
+#vertical-line {
+    width: 0;
+    height: 70%;
+    border: 1px solid grey;
+    margin: 0 auto;
+}
+
+/* This is the watchlist */
+#watchlist {
+    height: inherit;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+/* Watchlist icon */
+#watchlist a {
+    margin-right: 10px;
+}
+
+
+/* Sign-in div */
+#sign-in {
+    margin-left: auto;
+}
+
+/* This is the IMDbPro logo */
+nav > .pro-logo  {
+    font-size: 0.8rem;
+    font-family: 'impact-regular', sans-serif;
+    font-weight: 800;
+    transform: scale(1,1.3);
+}
+
+/* Navigation bar ends here */
+
+/* /////////////////////////////////////////////////////////////////////////////////////// */
+
+/* Main section starts here */
+
+main {
+    width:100%;
+    height: inherit;
+    background: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding-top: 5vh;
+    padding-left: 8%;
+    padding-right: 8%;
+}
+
+
+/* Aside section 1 */
+.aside-1 {
+    width: 70%;
+    background: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    /* border: 1px solid white; */
+}
+
+/* /////////////////////////////////////////////////////////////////////////////////////// */
+/* Carousel Section */
+
+.carousel {
+    /* border: 2px solid white; */
+    width: 95%;
+    height: 72vh;
+}
+
+.carousel:hover {
+    filter: brightness(80%);
+}
+
+.carousel-inner {
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-item {
+    width: 100%;
+    height: 100%;
+}
+
+.carousel > .carousel-inner > .carousel-item > img {
+    width: inherit;
+    height: inherit;
+    z-index: -6;
+}
+
+/* This contains the movie/show image and some info about it */
+.carousel-caption {
+    /* border: 2px solid white; */
+    position: absolute;
+    left: 0;
+    right: auto;
+    display: flex !important;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-end;
+    width: 70%;
+    height: 40%;
+    bottom: 1%;
+    padding: 0 1%;
+    z-index: 6;
+}
+
+.caption-image {
+    width: 26%;
+    height: 100%;
+    /* border: 1px solid red; */
+}
+
+.caption-image > img {
+    width: 100%;
+    height: inherit;
+}
+
+
+.caption {
+    word-wrap: break-word;
+    text-align: left;
+    margin-left: 2%;
+}
+
+.carousel-caption:hover {
+    color: var(--imdb-color);
+}
+/* Carousel ends here */
+
+
+/* ///////////////////////////////////////////////////////////////////////////////////// */
+
+
+/* Aside section 2 */
+.aside-2 {
+    width: 30%;
+    background: inherit;
+    height: 67vh;
+    /* border: 1px solid white; */
+}
+
+.aside-2 h5 {
+    color: var(--imdb-color);
+}
+
+/* This is the up next content div */
+#up-next-content {
+    width: 100%;
+    height: 61vh;
+    margin-top: 5%;
+    background: linear-gradient(#121212, black 60%);
+    /* border: 1px solid white; */
+}
+
+.content-class {
+    width: 100%;
+    height: 33%;
+    padding: 3%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    /* border: 1px solid white; */
+
+}
+
+.content-image {
+    /* border: 1px solid white; */
+    width: 25%;
+}
+
+.content-image > img {
+    width: 100%;
+}
+
+.play-text {
+    margin-left: 5%;
+    /* border: 1px solid white; */
+}
+
+.play-text:hover .play-button > i {
+    color: var(--imdb-color);
+}
+
+.play-text:hover {
+    cursor: pointer;
+}
+
+.play-button {
+    display:flex;
+    width: min-content;
+    height: min-content;
+    justify-content: space-between;
+    /* border:1px solid white; */
+    margin-top: -5px;
+    line-height: 0.9rem;
+}
+
+.play-button > p {
+    margin-left: 15px;
+}
+
+.play-button > i {
+    font-size: 1.3rem;
+}
+
+.content-text {
+    word-wrap: break-word;
+    font-size: 0.9rem;
+    /* border: 1px solid white; */
+    line-height: 0.9rem;
+}
+/* Aside section ends here */
+
+/* ///////////////////////////////////////////////////////////////////////////////////// */
+
+/* Top 10 section starts here */
+.top-10-container {
+    /* border: 1px solid white; */
+    margin-top: 5%;
+    margin-left: 1.5%;
+    height: auto;
+    width: 85%;
+}
+
+.top-10-container > h4 {
+    border-left: 5px solid var(--imdb-color);
+    padding-left: 10px;
+    font-weight: 700;
+}
+
+.top10-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 2%;
+    padding-left: 0;
+    /* border: 1px solid white; */
+    height: 75vh;
+    width: 100%;
+}
+
+.content-card {
+    height: 100%;
+    width: 18%;
+    border-radius: 5px;
+    /* border: 1px solid white; */
+}
+
+.top10-content-img {
+    width: 100%;
+    height: 60%;
+    border-radius: 5px;
+}
+
+.top10-content-img > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.content-info {
+    width: 100%;
+    height: 40%;
+}
+
+.star {
+    padding: 5%;
+    padding-top: 7%;
+}
+
+.content-name {
+    font-size: 1.1rem;
+    padding-left: 5%;
+    height: 50px;
+}
+
+.watchlist-btn {
+    padding: 3%;
+    width: 90%;
+    margin: auto;
+    margin-top: 5%;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.watchlist-btn:hover {
+    background-color: #535353;
+    cursor: pointer;
+}
+
+.watchlist-btn:active {
+    background-color: inherit;
+}
+
+.trailer {
+    text-align: center;
+    margin: auto;
+    margin-top: 10%;
+}
+
+.top10-2 {
+    margin-bottom: 100px;
+}
+/* Top 10 Section ends here */
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////// */
+
+/* Offcanvas for watchlist */
+.offcanvas {
+    background-color: black;
+    width: 500px !important;
+}
+
+.offcanvas-body {
+    display: flex !important;
+    justify-content: space-around !important;
+    flex-wrap: wrap !important;
+}
+
+.movie-container {
+    width: 200px;
+    height: 300px;
+    margin: 1%;
+    margin-top: 5%;
+    overflow: hidden;
+    position: relative;
+    /* border: 1px solid white; */
+}
+
+.movie-img-container {
+    width: 100%;
+    height: inherit;
+    /* height: 45%; */
+}
+
+.movie-img-container > div > img {
+    width: 100%;
+    /* border: 1px solid white; */
+}
+
+/* Common class for movie/show names in the watchlist */
+.watchlist-titles {
+    width: 90%;
+    position: absolute;
+    left:5%;
+    top: 1%;
+    font-size: 16px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* This is the delete icon div */
+.delete-icon {
+    position: absolute;
+    right: 2%;
+    z-index: 6;
+    cursor: pointer;
+    display: none;
+}
+
+.delete-icon > i {
+    color: red;
+}
+
+.plot {
+    width: 100%;
+    font-size: 14px;
+    transition: transform 0.5s ease-in-out;
+    /* border: 1px solid white; */
+}
+
+.movie-container:hover {
+
+    .movie-img-container {
+    filter: brightness(40%);
+    }
+    .plot {
+    transform: translateY(-101%);
+    background: rgba(0, 0, 0, 0.2);
+    }
+    .delete-icon {
+        display: block;
+    }
+
+    .watchlist-titles {
+        opacity: 1;
+        z-index: 2;
+    }
+}
+
+/* .movie-container:hover .movie-img-container{
+    filter: brightness(40%);
+}
+
+.movie-container:hover .plot {
+    transform: translateY(-101%);
+    background: rgba(0, 0, 0, 0.2);
+}
+ */
+
+/* Watchlist Offcanvas ends here */
+
+/* /////////////////////////////////////////////////////////////////////////////////////////////// */
+
+/* Search Result offcanvas begins here */
+
+.result-container {
+    width: 100%;
+    background: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 2%;
+    margin: -3%;
+}
+
+.result-image {
+    width: 180px;
+    height: fit-content;
+    box-shadow: 0px 0px 15px black;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.result-image > img {
+    width: 100%;
+}
+
+
+.result-info-container {
+    width: 100%;
+    text-align: center;
+    line-height: 1.2rem;
+}
+
+.result-info-container > p {
+    font-size: 14px;
+}
+
+/* Result offcanvas ends here */
+
+/* /////////////////////////////////////////////////////////////////////////////// */
+
+/* Common class for adding to watchlist div */
+.watchlistbtn-color {
+    background-color: #2c2c2c;
+}
+
+/* Common color classes */
+.white {
+    color: white;
+}
+
+.grey {
+    color: grey;
+}
+
+.card-background {
+    background-color: #1a1a1a;
+}
+
+.pro-blue {
+    color: #2b9abd;
+}
+
+.imdb-yellow {
+    color: #dbb90e;
+}

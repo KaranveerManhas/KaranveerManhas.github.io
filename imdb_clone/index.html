@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Title -->
+    <title>IMDB Clone || Karanveer Singh</title>
+</head>
+<!-- Body starts here -->
+<!-- This onload function here ensures that the watchlist from the previous
+sesion is displayed when page is loaded -->
+<body onload="displayWatchList()">
+  <!-- Navigation Bar -->
+    <nav>
+      <!-- IMDb logo -->
+        <div id="imdbLogo">
+            <span>IMDb</span>
+        </div>
+        <!-- Search bar section -->
+        <div class = "search-container">
+          <div class = "search-element">
+              <input type = "text" class = "form-control" placeholder="Search IMDb" 
+              id = "search-box" onkeyup="findMovies()" onclick = "findMovies()">
+
+              <div class = "search-list" id = "search-list">
+                  <!-- list here -->
+                  <!-- <div class = "search-list-item">
+                      <div class = "search-item-thumbnail">
+                        <a href="#offcanvas-search" data-bs-toggle="offcanvas"><img src = "top10/ashoka.jpg"></a>
+                      </div>
+                      <div class = "search-item-info">
+                          <a href="#offcanvas-search" data-bs-toggle="offcanvas"><h3>Ahsoka</h3></a>
+                          <a href="#offcanvas-search" data-bs-toggle="offcanvas"><p>2023</p></a>
+                      </div>
+                      <div class="watchlist-add" onclick="addToWatchlist(movieName)">
+                        <i class="fa-solid fa-bookmark"></i>
+                      </div>
+                  </div> -->
+              </div>
+          </div>
+        </div>
+        <!-- Search section ends -->
+        <!-- IMDbPro logo -->
+        <div class="white pro-logo">IMDB<span class="pro-blue">Pro</span></div>
+        <!-- Vertical line  -->
+        <div id="vertical-line"></div>
+        <!-- Link to watchlist offcanvas -->
+        <div id="watchlist">
+            <a href="#offcanvas-watchlist" data-bs-toggle="offcanvas"><i class="fa-solid fa-folder-plus white"></i></a>
+            <a href="#offcanvas-watchlist" class="white" data-bs-toggle="offcanvas">Watchlist</a>
+        </div>
+        <!-- Sign-in options, although it doesn't do anything haha -->
+        <div id="sign-in" class="white">
+            Sign In
+        </div>
+    </nav>
+    <!-- Navigation section ends here -->
+    <!-- Offcanvas for movie search result -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas-search" aria-labelledby="offcanvasLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title white" id="offcanvasLabel">Movie Details </h5>
+        <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body white">
+        <!-- Search Result Movie details go here -->
+        <div class="result-container" id="result-container">
+          <!-- <div class="result-image">
+            <img src="top10/blue_beetle.jpg">
+          </div>
+          <div class="result-info-container">
+            <h5 class="movie=name">Blue Beetle</h5>
+            <p class="movie-details grey">2023 ‧ Action, Adventure, Sci-Fi</p>
+            <p class="language grey">English</p>
+            <p class="result-plot grey" style="font-size: 19px;"> Plot</p>
+            <p class="grey">
+              An alien relic chooses Jaime Reyes to be its symbiotic host, bestowing the teenager with a suit of armor that's capable of extraordinary and unpredictable powers, forever changing his destiny as he becomes the superhero Blue Beetle.
+            </p>
+          </div>
+          <div class="watchlist-btn watchlistbtn-color">
+            <a href="" class="pro-blue">
+              <i class="fa-solid fa-plus pro-blue"></i>
+               Watchlist</a>
+          </div> -->
+        </div>
+      </div>
+    </div>
+    <!-- Result offcanvas ends here -->
+
+    <!-- Offcanvas for watchlist-->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas-watchlist" aria-labelledby="offcanvasLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title white" id="offcanvasLabel">Watchlist</h5>
+        <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body white" id="watchlist-body">
+        <!-- <div class="movie-container">
+          <div class="delete-icon" onclick="deleteMovie(movieID);">
+            <i class="fa-solid fa-trash-can"></i>
+          </div>
+          <div class="movie-img-container">
+            <div>
+              <img src="top10/ashoka.jpg">
+            </div>
+          </div>
+          <div class="plot">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Eveniet nulla vitae repudiandae, possimus numquam neque dolore maxime veritatis, 
+            nesciunt, non vero. 
+            Reprehenderit soluta non quidem esse, unde consectetur vitae amet.
+          </div>
+        </div>      -->
+      </div>
+    </div>
+    <!-- Offcanvas for watchlist ends here -->
+
+    <!-- Main section starts here -->
+    <main>
+      <!-- Aside section 1 -->
+        <aside class="aside-1 aside">
+          <!-- Bootstrap carousels -->
+            <div id="carouselExample" class="carousel slide">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img id="carousel1" src="https://www.digitaltrends.com/wp-content/uploads/2023/02/ant-man-and-the-wasp-quantumania-kathryn-newton-paul-rudd.jpg?p=1" class="d-block" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <div class="caption-image"><img src="https://m.media-amazon.com/images/M/MV5BODZhNzlmOGItMWUyYS00Y2Q5LWFlNzMtM2I2NDFkM2ZkYmE1XkEyXkFqcGdeQXVyMTU5OTA4NTIz._V1_SX300.jpg"></div>
+                        <div class="caption"><h2>Ant-Man and the Wasp: Quantumania</h2>
+                        <p>2023 ‧ Action/Adventure ‧ 2h 5m</p></div>
+
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img id="carousel2" src="https://movieplayer.net-cdn.it/t/images/2023/08/04/65-fuga-dalla-terra-ecco-perche-riscoprire-sci-fi-adam-driver_jpg_1600x900_crop_q85.jpg" class="d-block" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <div class="caption-image"><img src="https://m.media-amazon.com/images/M/MV5BNDgwNzc4MGYtOWMwMi00YjExLWIzMGEtMGQxMzA2NmExNzAxXkEyXkFqcGdeQXVyMTA3MDk2NDg2._V1_SX300.jpg"></div>
+                        <div class="caption">
+                          <h2>65</h2>
+                          <p>2023 ‧ Sci-fi/Action ‧ 1h 33m</p>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img id="carousel3" src="https://www.hollywoodreporter.com/wp-content/uploads/2023/05/WSA4690_TRL_comp_WTA_v0398.1105_R-H-2023.jpg?w=1296" class="d-block" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <div class="caption-image"><img src="https://m.media-amazon.com/images/M/MV5BMDgxOTdjMzYtZGQxMS00ZTAzLWI4Y2UtMTQzN2VlYjYyZWRiXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX300.jpg"></div>
+                        <div class="caption"><h2>Guardians of the Galaxy Vol. 3</h2>
+                        <p>2023 ‧ Action/Sci-fi ‧ 2h 29m</p></div>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+              <!-- Carousel ends here -->
+        </aside>
+        <!-- Aside section 1 ends here -->
+
+        <!-- Aside section 2 begins -->
+        <aside class="aside-2 aside">
+          <!-- This is the up next section just like in the original IMDb website
+          although it isn't dynamic like theirs. -->
+            <h5 >Up Next</h5>
+            <div id="up-next-content">
+              <div class="content-class">
+                <div class="content-image">
+                  <img src="https://m.media-amazon.com/images/M/MV5BMDA3MmM4MDEtM2YwYS00NzliLWFlNzctYTBmZGE1NjFiM2U1XkEyXkFqcGdeQXVyODQ4Mjc2NDM@._V1_QL75_UX280_CR0,0,280,414_.jpg">
+                </div>
+                  <div class="play-text">
+                    <div class="play-button">
+                      <i class="fa-regular fa-circle-play white"></i>
+                      <p class="grey">8:29</p>
+                    </div>
+                    <div class="content-text">
+                      <h6 class="white">"Guns & Gulaabs" Stars had a Wild Time on Set</h6>
+                      <p class="grey">The Actors Share Their Experiences</p>
+                    </div>
+                  </div>
+              </div>
+              <div class="content-class">
+                <div class="content-image">
+                  <img src="https://m.media-amazon.com/images/M/MV5BN2JjNjIwNDgtNTgxNy00OTViLTk0YWUtMTI0OWYwZWNmMDJmXkEyXkFqcGdeQXVyNDYzNjU3ODM@._V1_QL75_UX280_CR0,0,280,414_.jpg">
+                  </div>
+                <div class="play-text">
+                  <div class="play-button">
+                    <i class="fa-regular fa-circle-play white"></i>
+                    <p class="grey">4:10</p>
+                  </div>
+                  <div class="content-text">
+                    <h6 class="white">R Balki on Creating the World of 'Ghoomer'</h6>
+                    <p class="grey">And Why He's More Interested in Losers</p>
+                  </div>
+                </div>
+              </div>
+              <div class="content-class">
+                <div class="content-image" style="width:21%;">
+                  <img src="https://m.media-amazon.com/images/M/MV5BYzczMzllN2UtNDJmOS00MmE5LWE2MWYtNGEwODcwMDc2M2YyXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_QL75_UY414_CR8,0,280,414_.jpg">
+                  </div>
+                <div class="play-text">
+                  <div class="play-button">
+                    <i class="fa-regular fa-circle-play white"></i>
+                    <p class="grey">2:09</p>
+                  </div>
+                  <div class="content-text">
+                    <h6 class="white">Get Ready for the "One Piece"</h6>
+                    <p class="grey">Watch the Final Trailer</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </aside>
+        <!-- Aside section 2 has ended -->
+        <!-- Point to note that the top 10 section isn't part of aside section 1
+        since I needed more space to display the top 10 movies/shows -->
+        <!-- Top 10 Section starts here -->
+        <div class="top-10-container">
+          <!-- Top 10 heading -->
+          <h4 class="white">Top 10 on IMDb this week</h4>
+          <!-- The main top 10 content starts here -->
+          <div class="top10-content">
+            <!-- Content Card 1 -->
+            <div class="content-card">
+              <div class="top10-content-img">
+                <img src="top10/ashoka.jpg">
+              </div>
+              <div class="content-info card-background">
+                <div class="star">
+                  <i class="fa-solid fa-star imdb-yellow"></i>
+                  <span class="grey">8.1</span>
+                </div>
+                <div class="content-name white">
+                  1. Ahsoka
+                </div>
+                <div class="watchlist-btn watchlistbtn-color" onclick="addToWatchlist('tt13622776')">
+                  <a href="" class="pro-blue">
+                    <i class="fa-solid fa-plus pro-blue"></i>
+                     Watchlist</a>
+                </div>
+                <div class="trailer white">
+                  <i class="fa-solid fa-play"></i>
+                  Trailer
+                </div>
+              </div>
+            </div>
+            <!-- Content Card 2 -->
+            <div class="content-card">
+              <div class="top10-content-img">
+                <img src="top10/oppenheimer.jpg">
+              </div>
+              <div class="content-info card-background">
+                <div class="star">
+                  <i class="fa-solid fa-star imdb-yellow"></i>
+                  <span class="grey">8.6</span>
+                </div>
+                <div class="content-name white">
+                  2. Oppenheimer
+                </div>
+                <div class="watchlist-btn watchlistbtn-color" onclick="addToWatchlist('tt15398776')">
+                  <a href="" class="pro-blue">
+                    <i class="fa-solid fa-plus pro-blue"></i>
+                     Watchlist</a>
+                </div>
+                <div class="trailer white">
+                  <i class="fa-solid fa-play"></i>
+                  Trailer
+                </div>
+              </div>
+            </div>
+            <!-- Content Card 3 -->
+            <div class="content-card">
+              <div class="top10-content-img">
+                <img src="top10/blue_beetle.jpg">
+              </div>
+              <div class="content-info card-background">
+                <div class="star">
+                  <i class="fa-solid fa-star imdb-yellow"></i>
+                  <span class="grey">6.7</span>
+                </div>
+                <div class="content-name white">
+                  3. Blue Beetle
+                </div>
+                <div class="watchlist-btn watchlistbtn-color" onclick="addToWatchlist('tt9362930')">
+                  <a href="" class="pro-blue">
+                    <i class="fa-solid fa-plus pro-blue"></i>
+                     Watchlist</a>
+                </div>
+                <div class="trailer white">
+                  <i class="fa-solid fa-play"></i>
+                  Trailer
+                </div>
+              </div>
+            </div>
+            <!-- Content Card 4 -->
+            <div class="content-card">
+              <div class="top10-content-img">
+                <img src="top10/barbie.jpg">
+              </div>
+              <div class="content-info card-background">
+                <div class="star">
+                  <i class="fa-solid fa-star imdb-yellow"></i>
+                  <span class="grey">7.3</span>
+                </div>
+                <div class="content-name white">
+                  4. Barbie
+                </div>
+                <div class="watchlist-btn watchlistbtn-color" onclick="addToWatchlist('tt1517268')">
+                  <a href="" class="pro-blue">
+                    <i class="fa-solid fa-plus pro-blue"></i>
+                     Watchlist</a>
+                </div>
+                <div class="trailer white">
+                  <i class="fa-solid fa-play"></i>
+                  Trailer
+                </div>
+              </div>
+            </div>
+            <!-- Content Card 5 -->
+            <div class="content-card">
+              <div class="top10-content-img">
+                <img src="top10/rebel_moon.jpg">
+              </div>
+              <div class="content-info card-background">
+                <div class="star">
+                  <i class="fa-solid fa-star grey"></i>
+                </div>
+                <div class="content-name white">
+                  5. Rebel Moon
+                </div>
+                <div class="watchlist-btn watchlistbtn-color" onclick="addToWatchlist('tt14998742')">
+                  <a href="" class="pro-blue">
+                    <i class="fa-solid fa-plus pro-blue"></i>
+                     Watchlist</a>
+                </div>
+                <div class="trailer white">
+                  <i class="fa-solid fa-play"></i>
+                  Trailer
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Content Card 6 -->
+          <div class="top10-content top10-2">
+            <div class="content-card">
+              <div class="top10-content-img">
+                <img src="top10/suits.jpg">
+              </div>
+              <div class="content-info card-background">
+                <div class="star">
+                  <i class="fa-solid fa-star imdb-yellow"></i>
+                  <span class="grey">8.4</span>
+                </div>
+                <div class="content-name white">
+                  6. Suits
+                </div>
+                <div class="watchlist-btn watchlistbtn-color" onclick="addToWatchlist('tt1632701')">
+                  <a href="" class="pro-blue">
+                    <i class="fa-solid fa-plus pro-blue"></i>
+                     Watchlist</a>
+                </div>
+                <div class="trailer white">
+                  <i class="fa-solid fa-play"></i>
+                  Trailer
+                </div>
+              </div>
+            </div>
+            <!-- Content Card 7 -->
+            <div class="content-card">
+              <div class="top10-content-img">
+                <img src="top10/murders.jpg">
+              </div>
+              <div class="content-info card-background">
+                <div class="star">
+                  <i class="fa-solid fa-star imdb-yellow"></i>
+                  <span class="grey">8.1</span>
+                </div>
+                <div class="content-name white">
+                  7. Only Murders in the Building
+                </div>
+                <div class="watchlist-btn watchlistbtn-color" onclick="addToWatchlist('tt11691774')">
+                  <a href="" class="pro-blue">
+                    <i class="fa-solid fa-plus pro-blue"></i>
+                     Watchlist</a>
+                </div>
+                <div class="trailer white">
+                  <i class="fa-solid fa-play"></i>
+                  Trailer
+                </div>
+              </div>
+            </div>
+            <!-- Content Card 8 -->
+            <div class="content-card">
+              <div class="top10-content-img">
+                <img src="top10/the_bear.jpg">
+              </div>
+              <div class="content-info card-background">
+                <div class="star">
+                  <i class="fa-solid fa-star imdb-yellow"></i>
+                  <span class="grey">8.6</span>
+                </div>
+                <div class="content-name white">
+                  8. The Bear
+                </div>
+                <div class="watchlist-btn watchlistbtn-color" onclick="addToWatchlist('tt14452776')">
+                  <a href="" class="pro-blue">
+                    <i class="fa-solid fa-plus pro-blue"></i>
+                     Watchlist</a>
+                </div>
+                <div class="trailer white">
+                  <i class="fa-solid fa-play"></i>
+                  Trailer
+                </div>
+              </div>
+            </div>
+            <!-- Content Card 9 -->
+            <div class="content-card">
+              <div class="top10-content-img">
+                <img src="top10/painkiller.jpg">
+              </div>
+              <div class="content-info card-background">
+                <div class="star">
+                  <i class="fa-solid fa-star imdb-yellow"></i>
+                  <span class="grey">7.5</span>
+                </div>
+                <div class="content-name white">
+                  9. PainKiller
+                </div>
+                <div class="watchlist-btn watchlistbtn-color" onclick="addToWatchlist('tt11816814')">
+                  <a href="" class="pro-blue">
+                    <i class="fa-solid fa-plus pro-blue"></i>
+                     Watchlist</a>
+                </div>
+                <div class="trailer white">
+                  <i class="fa-solid fa-play"></i>
+                  Trailer
+                </div>
+              </div>
+            </div>
+            <!-- Content Card 10 -->
+            <div class="content-card">
+              <div class="top10-content-img">
+                <img src="top10/heart_of_stone.jpg">
+              </div>
+              <div class="content-info card-background">
+                <div class="star">
+                  <i class="fa-solid fa-star imdb-yellow"></i>
+                  <span class="grey">5.7</span>
+                </div>
+                <div class="content-name white">
+                  10. Heart of Stone
+                </div>
+                <div class="watchlist-btn watchlistbtn-color" onclick="addToWatchlist('tt13603966')">
+                  <a href="" class="pro-blue">
+                    <i class="fa-solid fa-plus pro-blue"></i>
+                     Watchlist</a>
+                </div>
+                <div class="trailer white">
+                  <i class="fa-solid fa-play"></i>
+                  Trailer
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Top 10 Section ends here -->
+    </main>
+    <!-- Main section ends here as well -->
+
+    <!-- Script for bootstrap cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <!-- Script for fontawesom icons -->
+    <script src="https://kit.fontawesome.com/8e3b4fcd56.js" crossorigin="anonymous"></script>
+    <!-- Script for API funcitionality -->
+    <script src="script.js"></script>
+</body>
+</html>
