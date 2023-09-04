@@ -95,7 +95,7 @@ function loadMovieDetails() {
             searchList.classList.add('hide-search-list');
             searchBox.value = "";
             // Making use of the previously set data-id attribute
-            const result = await fetch(`http://www.omdbapi.com/?i=${movie.dataset.id}`+apiKey);
+            const result = await fetch(`https://www.omdbapi.com/?i=${movie.dataset.id}`+apiKey);
             const movieDetails = await result.json();
             // console.log(movieDetails);
             // Calling the function which will now display the movie details.
