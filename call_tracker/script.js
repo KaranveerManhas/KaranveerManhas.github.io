@@ -5,6 +5,8 @@ const noAnswerCalls = document.getElementsByClassName('no-answer')[0];
 const silentCalls = document.getElementsByClassName('silent')[0];
 const silentAnsweringCalls = document.getElementsByClassName('silent-answer')[0];
 const olangCalls = document.getElementsByClassName('olang')[0];
+const faxCalls = document.getElementsByClassName('fax')[0];
+const sitToneCalls = document.getElementsByClassName('sit-tone')[0];
 const callButtons = document.querySelectorAll('.call-add');
 
 let totalCalls = 0;
@@ -14,6 +16,8 @@ let noAnswerCallCount = 0;
 let silentCallCount = 0;
 let silentAnsweringCallCount = 0;
 let olangCallCount = 0;
+let faxCallCount = 0;
+let sitToneCallCount = 0;
 let callsArray = {};
 
 
@@ -25,11 +29,12 @@ function updateDisplay(){
     silentCalls.innerText = silentCallCount;
     silentAnsweringCalls.innerText = silentAnsweringCallCount;
     olangCalls.innerText = olangCallCount;
-
+    faxCalls.innerText = faxCallCount;
+    sitToneCalls.innerText = sitToneCallCount;
 }
 
 function updateTotalCount() {
-    totalCalls = normalCallCount + silentCallCount + olangCallCount + silentAnsweringCallCount + busyCallCount + noAnswerCallCount;
+    totalCalls = normalCallCount + silentCallCount + olangCallCount + silentAnsweringCallCount + busyCallCount + noAnswerCallCount + faxCallCount +sitToneCallCount;
     updateDisplay();
 }
 
@@ -41,7 +46,9 @@ function updateCallsArray() {
         'noAnswerCallCount': noAnswerCallCount,
         'silentCallCount' : silentCallCount,
         'silentAnsweringCallCount':silentAnsweringCallCount,
-        'olangCallCount':olangCallCount
+        'olangCallCount':olangCallCount,
+        'faxCallCount': faxCallCount,
+        'sitToneCallCount': sitToneCallCount
     }
 }
 
@@ -53,6 +60,8 @@ function clearAll() {
     silentCallCount = 0;
     silentAnsweringCallCount = 0;
     olangCallCount = 0;
+    faxCallCount = 0;
+    sitToneCallCount = 0;
     normalCalls.innerText = 0;
     busyCalls.innerText = 0;
     noAnswerCalls.innerText = 0;
@@ -60,6 +69,8 @@ function clearAll() {
     silentCalls.innerText = 0;
     silentAnsweringCalls.innerText = 0;
     olangCalls.innerText = 0;
+    faxCalls.innerText = 0;
+    sitToneCalls.innerText = 0;
 }
 
 function updateVariables() {
@@ -70,6 +81,8 @@ function updateVariables() {
     silentCallCount = parseInt(callsArray.silentCallCount);
     silentAnsweringCallCount = parseInt(callsArray.silentAnsweringCallCount);
     olangCallCount = parseInt(callsArray.olangCallCount);
+    faxCallCount = parseInt(callsArray.faxCallCount);
+    sitToneCallCount = parseInt(callsArray.sitToneCallCount);
 }
 
 function updateLocalStorage() {
@@ -135,6 +148,22 @@ for (const callButton of callButtons) {
         }
         else if (callButton.classList.contains('olang')) {
             olangCallCount++;
+            updateDisplay();
+            updateTotalCount();
+            updateCallsArray();
+            updateLocalStorage();
+
+        }
+        else if (callButton.classList.contains('fax')) {
+            faxCallCount++;
+            updateDisplay();
+            updateTotalCount();
+            updateCallsArray();
+            updateLocalStorage();
+
+        }
+        else if (callButton.classList.contains('sit-tone')) {
+            sitToneCallCount++;
             updateDisplay();
             updateTotalCount();
             updateCallsArray();
