@@ -85,6 +85,7 @@ function updateVariables() {
     sitToneCallCount = parseInt(callsArray.sitToneCallCount);
 }
 
+
 function updateLocalStorage() {
     if (!localStorage.getItem('callsArray')) {
         localStorage.setItem('callsArray', JSON.stringify(callsArray));
