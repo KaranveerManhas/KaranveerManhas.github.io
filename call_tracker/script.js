@@ -74,15 +74,15 @@ function clearAll() {
 }
 
 function updateVariables() {
-    totalCalls = parseInt(callsArray.totalCalls);
-    normalCallCount = parseInt(callsArray.normalCallCount);
-    busyCallCount = parseInt(callsArray.busyCallCount);
-    noAnswerCallCount=parseInt(callsArray.noAnswerCallCount);
-    silentCallCount = parseInt(callsArray.silentCallCount);
-    silentAnsweringCallCount = parseInt(callsArray.silentAnsweringCallCount);
-    olangCallCount = parseInt(callsArray.olangCallCount);
-    faxCallCount = parseInt(callsArray.faxCallCount);
-    sitToneCallCount = parseInt(callsArray.sitToneCallCount);
+    totalCalls = parseInt(callsArray.totalCalls) || 0;
+    normalCallCount = parseInt(callsArray.normalCallCount) || 0;
+    busyCallCount = parseInt(callsArray.busyCallCount) || 0;
+    noAnswerCallCount=parseInt(callsArray.noAnswerCallCount) || 0;
+    silentCallCount = parseInt(callsArray.silentCallCount) || 0;
+    silentAnsweringCallCount = parseInt(callsArray.silentAnsweringCallCount) || 0;
+    olangCallCount = parseInt(callsArray.olangCallCount) || 0;
+    faxCallCount = parseInt(callsArray.faxCallCount) || 0;
+    sitToneCallCount = parseInt(callsArray.sitToneCallCount) || 0;
 }
 
 
