@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-responsive.css">
     <title>CC Call Tracker</title>
 </head>
 <body>
@@ -12,73 +13,132 @@
             <h1>CC Call Tracker</h1>
         </div>
         <div class="call-tracker">
-            <div class="call-type">
+            <div class="call-type total-container">
                 <h3>Total : </h3>
-                <div class="total"></div>
+                <div class="total">0</div>
             </div>
             <div class="call-type">
                 <h3>Normal : </h3>
                 <div class="calls">
+                    <button class="call-add" onclick="addCallCounts('normal')">
+                        <!-- <span>+</span> -->
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
                     <p class="call-no normal">0</p>
-                    <button class="call-add normal">+</button>
+                    <button class="call-add" onclick="deleteCallCounts('normal')">
+                        <!-- <span>-</span> -->
+                        <i class="fa-solid fa-minus"></i>
+                    </button>
                 </div>
             </div>
             <div class="call-type">
                 <h3>Busy : </h3>
                 <div class="calls">
+                    <button class="call-add" onclick="addCallCounts('busy')">
+                        <!-- <span>+</span> -->
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
                     <p class="call-no busy">0</p>
-                    <button class="call-add busy">+</button>
+                    <button class="call-add" onclick="deleteCallCounts('busy')">
+                        <!-- <span>-</span> -->
+                        <i class="fa-solid fa-minus"></i>
+                    </button>
                 </div>
             </div>
             <div class="call-type">
                 <h3>No Answer : </h3>
                 <div class="calls">
+                    <button class="call-add" onclick="addCallCounts('no-answer')">
+                        <!-- <span>+</span> -->
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
                     <p class="call-no no-answer">0</p>
-                    <button class="call-add no-answer">+</button>
+                    <button class="call-add" onclick="deleteCallCounts('no-answer')">
+                        <!-- <span>-</span> -->
+                        <i class="fa-solid fa-minus"></i>
+                    </button>
                 </div>
             </div>
             <div class="call-type">
                 <h3>Silent : </h3>
                 <div class="calls">
+                    <button class="call-add" onclick="addCallCounts('silent')">
+                        <!-- <span>+</span> -->
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
                     <p class="call-no silent">0</p>
-                    <button class="call-add silent">+</button>
+                    <button class="call-add" onclick="deleteCallCounts('silent')">
+                        <!-- <span>-</span> -->
+                        <i class="fa-solid fa-minus"></i>
+                    </button>
                 </div>
             </div>
             <div class="call-type">
                 <h3>Silent Answering Machine : </h3>
                 <div class="calls">
+                    <button class="call-add" onclick="addCallCounts('silent-ans')">
+                        <!-- <span>+</span> -->
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
                     <p class="call-no silent-answer">0</p>
-                    <button class="call-add silent-answer">+</button>
+                    <button class="call-add" onclick="deleteCallCounts('silent-ans')">
+                        <!-- <span>-</span> -->
+                        <i class="fa-solid fa-minus"></i>
+                    </button>
                 </div>
             </div>
             <div class="call-type">
                 <h3>Olang : </h3>
                 <div class="calls">
+                    <button class="call-add" onclick="addCallCounts('olang')">
+                        <!-- <span>+</span> -->
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
                     <p class="call-no olang">0</p>
-                    <button class="call-add olang">+</button>
+                    <button class="call-add" onclick="deleteCallCounts('olang')">
+                        <!-- <span>-</span> -->
+                        <i class="fa-solid fa-minus"></i>
+                    </button>
                 </div>
             </div>
             <div class="call-type">
                 <h3>Fax Tone : </h3>
                 <div class="calls">
+                    <button class="call-add" onclick="addCallCounts('fax')">
+                        <!-- <span>+</span> -->
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
                     <p class="call-no fax">0</p>
-                    <button class="call-add fax">+</button>
+                    <button class="call-add" onclick="deleteCallCounts('fax')">
+                        <!-- <span>-</span> -->
+                        <i class="fa-solid fa-minus"></i>
+                    </button>
                 </div>
             </div>
             <div class="call-type">
                 <h3>SIT Tone : </h3>
                 <div class="calls">
+                    <button class="call-add" onclick="addCallCounts('sit-tone')">
+                        <!-- <span>+</span> -->
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
                     <p class="call-no sit-tone">0</p>
-                    <button class="call-add sit-tone">+</button>
+                    <button class="call-add" onclick="deleteCallCounts('sit-tone')">
+                        <!-- <span>-</span> -->
+                        <i class="fa-solid fa-minus"></i>
+                    </button>
                 </div>
             </div>
             <div class="call-type clear-div">
-                <button class="call-add clear">
+                <button class="clear">
                     Clear
                 </button>
             </div>
         </div>
     </div>
-    <script src="script.js"></script>
+
+    <script src="https://kit.fontawesome.com/8e3b4fcd56.js" crossorigin="anonymous"></script>
+    <!-- <script src="script.js"></script> -->
+    <script src="index.js"></script>
 </body>
 </html>

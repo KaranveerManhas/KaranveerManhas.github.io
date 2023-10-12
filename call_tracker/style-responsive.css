@@ -1,0 +1,30 @@
+@media screen and (max-width: 450px) {
+    .call-tracker {
+        width: 100%;
+    }
+    .call-type > h3 {
+        font-size: 0.9em;
+        max-width: 50%;
+        /* border: 1px solid black; */
+    }
+
+    .calls {
+        width: 130px;
+    }
+    .calls > p {
+        max-width: 20px;
+    }
+    .call-add {
+        font-size: 0.8em;
+    }
+
+}
+
+@media screen and (max-width: 280px) {
+    .call-tracker{
+        padding: 0.5em;
+    }
+    .calls {
+        width: 50%;
+    }
+}

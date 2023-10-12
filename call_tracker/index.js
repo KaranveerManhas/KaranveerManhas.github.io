@@ -7,7 +7,10 @@ const silentAnsweringCalls = document.getElementsByClassName('silent-answer')[0]
 const olangCalls = document.getElementsByClassName('olang')[0];
 const faxCalls = document.getElementsByClassName('fax')[0];
 const sitToneCalls = document.getElementsByClassName('sit-tone')[0];
-const callButtons = document.querySelectorAll('.call-add');
+// const callButtons = document.querySelectorAll('.call-add');
+// const callDeleteButtons = document.querySelectorAll('.call-delete');
+const clearButton = document.querySelector('.clear');
+
 
 let totalCalls = 0;
 let normalCallCount = 0;
@@ -33,8 +36,13 @@ function updateDisplay(){
     sitToneCalls.innerText = sitToneCallCount;
 }
 
-function updateTotalCount() {
-    totalCalls = normalCallCount + silentCallCount + olangCallCount + silentAnsweringCallCount + busyCallCount + noAnswerCallCount + faxCallCount +sitToneCallCount;
+function incrementTotalCount() {
+    totalCalls++;
+}
+
+function decrementTotalCount() {
+    totalCalls--;
+    console.log(totalCalls);
     updateDisplay();
 }
 
@@ -49,7 +57,7 @@ function updateCallsArray() {
         'olangCallCount':olangCallCount,
         'faxCallCount': faxCallCount,
         'sitToneCallCount': sitToneCallCount
-    }
+        }
 }
 
 function clearAll() {
@@ -65,7 +73,7 @@ function clearAll() {
     normalCalls.innerText = 0;
     busyCalls.innerText = 0;
     noAnswerCalls.innerText = 0;
-    totalContainer.innerHTML = "";
+    totalContainer.innerHTML = 0;
     silentCalls.innerText = 0;
     silentAnsweringCalls.innerText = 0;
     olangCalls.innerText = 0;
@@ -87,19 +95,14 @@ function updateVariables() {
 
 
 function updateLocalStorage() {
-    if (!localStorage.getItem('callsArray')) {
-        localStorage.setItem('callsArray', JSON.stringify(callsArray));
-    }
-    else {
-        let tempCallCounts = JSON.parse(localStorage.getItem('callsArray'));
-        if (totalCalls == 0) {
-            callsArray = tempCallCounts;
-            updateVariables();
-            updateDisplay();
-        }
-        else {
-        localStorage.setItem('callsArray', JSON.stringify(callsArray));
-        }
+    localStorage.setItem('callsArray', JSON.stringify(callsArray)); 
+}
+
+function getLocalStorage() {
+    if (localStorage.getItem('callsArray')) {
+        callsArray = JSON.parse(localStorage.getItem('callsArray'));
+        updateVariables();
+        updateDisplay();
     }
 }
 
@@ -107,79 +110,102 @@ function clearLocalStorage() {
     localStorage.clear();
 }
 
-for (const callButton of callButtons) {
-    callButton.addEventListener('click', function() {
-        if (callButton.classList.contains('normal')) {
+function addCallCounts(callType) {
+    switch (callType) {
+        case 'normal':
             normalCallCount++;
-            updateDisplay();
-            updateTotalCount();
-            updateCallsArray();
-            updateLocalStorage();
-        }
-        else if (callButton.classList.contains('busy')) {
+            break;
+        case 'busy':
             busyCallCount++;
-            updateDisplay();
-            updateTotalCount();
-            updateCallsArray();
-            updateLocalStorage();
-        }
-        else if (callButton.classList.contains('no-answer')) {
+            break;
+        case 'no-answer':
             noAnswerCallCount++;
-            updateDisplay();
-            updateTotalCount();
-            updateCallsArray();
-            updateLocalStorage();
-
-        }
-        else if (callButton.classList.contains('silent')) {
+            break;
+        case 'silent':
             silentCallCount++;
-            updateDisplay();
-            updateTotalCount();
-            updateCallsArray();
-            updateLocalStorage();
-
-        }
-        else if (callButton.classList.contains('silent-answer')) {
+            break;
+        case 'silent-ans':
             silentAnsweringCallCount++;
-            updateDisplay();
-            updateTotalCount();
-            updateCallsArray();
-            updateLocalStorage();
-
-        }
-        else if (callButton.classList.contains('olang')) {
+            break;
+        case 'olang':
             olangCallCount++;
-            updateDisplay();
-            updateTotalCount();
-            updateCallsArray();
-            updateLocalStorage();
-
-        }
-        else if (callButton.classList.contains('fax')) {
+            break;
+        case 'fax':
             faxCallCount++;
-            updateDisplay();
-            updateTotalCount();
-            updateCallsArray();
-            updateLocalStorage();
-
-        }
-        else if (callButton.classList.contains('sit-tone')) {
+            break;
+        case 'sit-tone':
             sitToneCallCount++;
-            updateDisplay();
-            updateTotalCount();
-            updateCallsArray();
-            updateLocalStorage();
-
-        }
-        else if (callButton.classList.contains('clear')) {
-            clearAll();
-            updateCallsArray();
-            updateDisplay();
-            clearLocalStorage();
-        }
-    });
+            break;
+    }
+    incrementTotalCount();
+    updateCallsArray();
+    updateLocalStorage();
+    updateDisplay();
 }
 
 
+function deleteCallCounts(callType) {
+    switch (callType){
+        case 'normal':
+            if (normalCallCount > 0){
+                normalCallCount--;
+                decrementTotalCount();
+            }
+            break;
+        case 'busy':
+            if (busyCallCount > 0){
+                busyCallCount--;
+                decrementTotalCount();
+            }
+            break;
+        case 'no-answer':
+            if (noAnswerCallCount > 0){
+                noAnswerCallCount--;
+                decrementTotalCount();
+            }
+            break;
+        case 'silent':
+            if (silentCallCount > 0){
+                silentCallCount--;
+                decrementTotalCount();
+            }
+            break;
+        case 'silent-ans':
+            if (silentAnsweringCallCount > 0){
+                silentAnsweringCallCount--;
+                decrementTotalCount();
+            }
+            break;
+        case 'olang':
+            if (olangCallCount > 0){
+                olangCallCount--;
+                decrementTotalCount();
+            }
+            break;
+        case 'fax':
+            if (faxCallCount > 0){
+                faxCallCount--;
+                decrementTotalCount();
+            }
+            break;
+        case 'sit-tone':
+            if (sitToneCallCount > 0){
+                sitToneCallCount--;
+                decrementTotalCount();
+            }
+            break;
+    }
+    // decrementTotalCount();
+    updateCallsArray();
+    updateLocalStorage();
+}
 
-document.addEventListener('DOMContentLoaded', updateLocalStorage);
+
+clearButton.addEventListener('click', function() {
+    clearAll();
+    updateCallsArray();
+    updateDisplay();
+    clearLocalStorage();
+})
+
+document.addEventListener('DOMContentLoaded', getLocalStorage);
