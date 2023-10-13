@@ -1,23 +1,47 @@
-@media screen and (max-width: 450px) {
-    .call-tracker {
-        width: 100%;
+@media screen and (max-width: 1200px) {
+    .wrapper {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .wrapper {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .wrapper {
+        width: 60%;
     }
     .call-type > h3 {
         font-size: 0.9em;
         max-width: 50%;
         /* border: 1px solid black; */
     }
+}
 
-    .calls {
-        width: 130px;
+@media screen and (max-width: 650px) {
+    .wrapper {
+        width: 70%;
     }
+    .call-tracker {
+        width: 100%;
+    }
+
     .calls > p {
-        max-width: 20px;
+        min-width: 20px;
     }
     .call-add {
         font-size: 0.8em;
     }
 
+}
+
+@media screen and (max-width: 450px) {
+    .wrapper {
+        width: 90%;
+    }
 }
 
 @media screen and (max-width: 280px) {
