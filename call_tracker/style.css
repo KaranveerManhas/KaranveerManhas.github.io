@@ -100,7 +100,7 @@ body::before {
     transition: all 0.3s ease;
 }
 
-.call-add:hover, .clear:hover {
+.call-add:active, .clear:active {
     border-color: #0d47a1;
     color: #0d47a1;
 }
