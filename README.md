@@ -1,5 +1,20 @@
 # KaranveerManhas.github.io
 
-These are all the projects I've worked on so far and published on github pages.
+This repository contains several projects made using HTML, CSS, and JavaScript. Each project has its dedicated folder within the main branch. The main branch also includes an `index.html` file that displays a list of all the projects available.
 
-Each project can be accessed by writing karanveermanhas.github.io/folder_name or you can just visit https://karanveermanhas.github.io/ and click on the project you want to see and it will open that project in a new tab.
+## Projects
+
+1. Music Player
+2. IMDb Clone
+3. Call Tracker
+4. Calculator
+5. Resume
+6. Stopwatch
+7. Toggle Switch
+8. Change Color and Shape
+
+## Accessing the Projects
+
+To view any of the projects live, simply click on the corresponding list item displayed on the `index.html` webpage. This will direct you to the live version of the project where you can interact with it.
+
+Feel free to explore and enjoy the various projects available in this repository!
