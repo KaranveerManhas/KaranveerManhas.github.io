@@ -12,13 +12,20 @@
 
 }
 
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+}
 
 /* Body */
 body {
     background-color: var(--background-color);
     font-family: 'Open Sans', sans-serif;
     color: white;
-    margin: 0px;
+    /* margin: 0px; */
+    width: 100%;
+    overflow-x: hidden;
 }
 
 
@@ -45,9 +52,6 @@ a {
     color: white;
 }
 
-.navigation > div {
-    display: inline-block;
-}
 
 /* Animation for the website logo */
 
@@ -89,6 +93,10 @@ a {
     margin-left: 10px;
 }
 
+.fav i {
+    display: none;
+}
+
 .fav h6 {
     margin-top: 5px;
     font-weight: 600;
@@ -99,6 +107,10 @@ a {
 .search_bar {
     width: 20%;
     position: relative;
+}
+
+.search-bar-mobile {
+    display: none;
 }
 
 .search_bar input {
@@ -123,7 +135,7 @@ a {
     position: absolute;
     width: min-content;
     left: 5%;
-    top: 15%;
+    top: 10%;
 }
 
 .search_bar > div:nth-child(3) {
@@ -201,9 +213,10 @@ main {
 /* Section 1 of the main part */
 .section-1 {
     width: 75%;
-    height: 75vh;
+    height: 78vh;
     overflow:scroll;
     overflow-x: hidden;
+    /* border: 1px solid white; */
 }
 /* Overflow scrollbar display set to none for a better looking page */
 .section-1::-webkit-scrollbar {
@@ -213,7 +226,7 @@ main {
 /* Section 2 of the main part ( Queue Section) */
 .section-2 {
     width: 24%;
-    height: 74vh;
+    height: 78vh;
 }
 
 /* Aside section 1 outer carousel */
@@ -666,6 +679,7 @@ block */
     height: auto;
     width: 100%;
     box-sizing: border-box;
+    padding: 0.5em;
     /* margin: 3vw 0px; */
     /* border: 1px solid white; */
 }
@@ -676,10 +690,11 @@ block */
 
 .language-content {
     display: flex;
-    flex-direction: row;
+    /* flex-direction: row; */
     flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: baseline;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1%;
     padding: 0px 10px;
 }
 
@@ -687,18 +702,21 @@ block */
 .language-content > div{
     background-color: var(--block-color);
     /* width: 10vw; */
-    /* border: 1px solid white; */
     margin: 1vw 0;
-    padding: 15px 15px;
-    border-radius: 5px;
+    padding: 15px 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 15%;
+    min-width: 160px;
     transition: all ease-in-out 0.1s; 
 }
 
 /* Image inside language content */
 .language-content div img {
-    width: 8vw;
+    width: 100%;
     min-width: 50px;
-    height: 8vw;
+    /* height: 8vw; */
     min-height: 50px;
     border-radius: 5px;
     box-shadow: 0px 0px 7px 2px rgba(20, 20, 20, 0.466);
@@ -712,8 +730,8 @@ block */
 /* The p tags containing the song name */
 .language-content div p:nth-child(2n) {
     margin-top: 8px;
-    width: 100%;
-    word-wrap: break-word;
+    /* width: 100%; */
+    /* word-wrap: break-word; */
     font-weight: 600;
 }
 /* The p tags containing the song release date */
@@ -771,11 +789,12 @@ label {
 
 .playlist-content {
     width: 100%;
-    height: 60vh;
+    height: 63vh;
     display: flex;
     flex-direction: column;
     overflow: scroll;
     cursor: pointer;
+    /* border: 1px solid white; */
 }
 
 .playlist-content::-webkit-scrollbar {
@@ -876,9 +895,9 @@ label {
 /* Footer begins here */
 footer {
     position: absolute;
-    bottom: 1px;
+    bottom: 0;
     width: 100%;
-    height: 80px;
+    height: 70px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -908,8 +927,8 @@ footer {
 #active-song-image {
     width: 60px;
     height: 60px;
-    min-width: 50px;
-    min-width: 50px;
+    min-width: 30px;
+    min-width: 30px;
     border-radius: 5px;
 }
 
@@ -1006,6 +1025,14 @@ footer {
 }
 
 /* Extra Icons */
+
+.footer-dropdown {
+    display: none;
+}
+
+.footer-dropdown-content {
+    bottom: 100%;
+}
 
 .extras {
     position: relative;

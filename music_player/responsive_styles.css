@@ -16,13 +16,18 @@
         display: none;
         position: absolute;
         width: 350px;
-        height: 670px;
-        top: 10%;
+        height: 100%;
+        top: 0;
         right: 0;
         z-index: 8;
         background-color: var(--background-color);
         border-radius: 5px;
     }
+
+    .playlist-content {
+        height: 80%;
+    }
+
     /* Section 1 will occupy all the width available*/
     .section-1 {
         width: 100%;
@@ -96,11 +101,79 @@
     /* Adjusting footer divs to look better */
     /* extra icons on the right */
     .extras {
-        min-width: 200px;
+        width: 200px;
     }
-    /* active song container */
-    .active-song {
-        min-width: 200px;
+}
+
+@media screen and (max-width: 700px) {
+
+    .active-song-desc {
+        display: none;
     }
 
+    .controls {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    .fav h6 {
+        display: none;
+    }
+
+    .fav i {
+        display: block;
+    }
+
+    .search_bar {
+        width: 40%;
+    }
+
+    .notification_icon span {
+        display: none;
+    }
+
+    .footer-dropdown {
+        display: inline-block;
+    }
+
+    .player {
+        width: 70%;
+    }
+    .extras {
+        display: none;
+    }
+    .extras-responsive {
+        display: flex;
+    }
+
+    .controls {
+        max-width: 80%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    .search-bar-mobile {
+        display: block;
+    }
+
+    .search_bar {
+        display: none !important;
+    }
+
+    .section-2 {
+        width: 100%;
+        height: 100%;
+    }
+
+    .blocks {
+        width: 100% !important;
+    }
+    
+    .heart-icon {
+        display: none;
+    }
+    
 }
