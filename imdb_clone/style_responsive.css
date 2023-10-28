@@ -1,0 +1,140 @@
+@media screen and (max-width: 1200px) {
+    .content-info i, .content-info span {
+        font-size: 0.9rem;
+    }
+
+    .content-name {
+        font-size: 0.9rem;
+    }
+
+    .watchlist-btn {
+        width: 80%;
+    }
+
+    .watchlist-btn a {
+        font-size: 0.9rem;
+    }
+
+    .trailer {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    nav {
+        padding: 0.7rem 5%;
+    }
+
+    .caption h2 {
+        font-size: 1.2rem;
+    }
+
+    .caption p {
+        font-size: 0.7rem;
+    }
+
+    .aside-2 h5{ 
+        font-size: 1.1rem; 
+    }
+
+    #up-next-content * p{
+        font-size: 0.8rem;
+    }
+
+    #up-next-content * i {
+        font-size: 0.9rem;
+    }
+
+    .top-10-container {
+        width: 100%;
+    }
+
+    .top-10-container h4 {
+        font-size: 1.2rem;
+    }
+
+    .top10-content {
+        height: 65vh;
+    }
+
+    .content-info i, .content-info span {
+        font-size: 0.8rem;
+    }
+
+    .content-name {
+        font-size: 0.9rem;
+    }
+
+    .watchlist-btn {
+        width: 80%;
+    }
+
+    .watchlist-btn a {
+        font-size: 0.9rem;
+    }
+
+    .trailer {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .aside-2 {
+        display: none;
+    }
+
+    .aside-1 {
+        width: 100%;
+    }
+
+    .top-10-container {
+        width: 100%;
+    }
+
+    #imdbLogo span {
+        font-size: 1.1rem;
+    }
+
+    .search-container {
+        width: 40%;
+    }
+
+    .search-element .form-control {
+        font-size: 0.6rem;
+        padding: 0.3rem 0.5rem;
+        border-radius: 0.3rem; 
+    }
+
+    .pro-logo {
+        display: none;
+    }
+
+    #vertical-line {
+        display: none;
+    }
+
+    #watchlist a {
+        font-size: 0.9rem;
+    }
+
+    #sign-in {
+        font-size: 0.9rem;
+    }
+    
+}
+
+@media screen and (max-width: 500px) {
+    
+    main {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    #watchlist a:last-child {
+        display: none;
+    }
+
+    .top10-content {
+        justify-content: center;
+    }
+}

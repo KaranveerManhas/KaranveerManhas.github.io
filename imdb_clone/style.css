@@ -271,7 +271,8 @@ main {
 .carousel {
     /* border: 2px solid white; */
     width: 95%;
-    height: 72vh;
+    /* height: 72vh; */
+    max-height: 480px;
 }
 
 .carousel:hover {
@@ -289,8 +290,8 @@ main {
 }
 
 .carousel > .carousel-inner > .carousel-item > img {
-    width: inherit;
-    height: inherit;
+    width: 100%;
+    height: 100%;
     z-index: -6;
 }
 
@@ -312,7 +313,7 @@ main {
 }
 
 .caption-image {
-    width: 26%;
+    /* width: 25%; */
     height: 100%;
     /* border: 1px solid red; */
 }
@@ -329,6 +330,8 @@ main {
     margin-left: 2%;
 }
 
+
+
 .carousel-caption:hover {
     color: var(--imdb-color);
 }
@@ -337,12 +340,11 @@ main {
 
 /* ///////////////////////////////////////////////////////////////////////////////////// */
 
-
 /* Aside section 2 */
 .aside-2 {
     width: 30%;
     background: inherit;
-    height: 67vh;
+    /* height: 67vh; */
     /* border: 1px solid white; */
 }
 
@@ -353,8 +355,9 @@ main {
 /* This is the up next content div */
 #up-next-content {
     width: 100%;
-    height: 61vh;
+    /* height: 61vh; */
     margin-top: 5%;
+    padding: 1% 0;
     background: linear-gradient(#121212, black 60%);
     /* border: 1px solid white; */
 }
@@ -367,7 +370,6 @@ main {
     flex-direction: row;
     justify-content: flex-start;
     /* border: 1px solid white; */
-
 }
 
 .content-image {
@@ -410,7 +412,7 @@ main {
     font-size: 1.3rem;
 }
 
-.content-text {
+.content-text h6{
     word-wrap: break-word;
     font-size: 0.9rem;
     /* border: 1px solid white; */
@@ -425,8 +427,8 @@ main {
     /* border: 1px solid white; */
     margin-top: 5%;
     margin-left: 1.5%;
-    height: auto;
-    width: 85%;
+    /* height: auto; */
+    width: 90%;
 }
 
 .top-10-container > h4 {
@@ -438,37 +440,46 @@ main {
 .top10-content {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: space-between;
+    flex-wrap: wrap;
+    /* gap: 1%; */
     padding-top: 2%;
     padding-left: 0;
     /* border: 1px solid white; */
-    height: 75vh;
+    height: 100%;
     width: 100%;
 }
 
 .content-card {
     height: 100%;
     width: 18%;
+    max-height: 400px;
+    min-width: 140px;
+    max-width: 160px;
     border-radius: 5px;
+    margin: 1%;
     /* border: 1px solid white; */
 }
 
 .top10-content-img {
     width: 100%;
-    height: 60%;
+    height: 50%;
     border-radius: 5px;
 }
 
 .top10-content-img > img {
     width: 100%;
     height: 100%;
-    border-radius: 5px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
 }
 
 .content-info {
     width: 100%;
-    height: 40%;
+    height: 50%;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 .star {
