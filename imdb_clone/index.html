@@ -22,10 +22,18 @@ sesion is displayed when page is loaded -->
             <span>IMDb</span>
         </div>
         <!-- Search bar section -->
+        <div>
+          <a href="#" id="search-bar-link">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </a>
+        </div>
         <div class = "search-container">
           <div class = "search-element">
               <input type = "text" class = "form-control" placeholder="Search IMDb" 
               id = "search-box" onkeyup="findMovies()" onclick = "findMovies()">
+              <a href="#" id="search-close">
+                <i class="fa-solid fa-xmark"></i>
+              </a>
 
               <div class = "search-list" id = "search-list">
                   <!-- list here -->

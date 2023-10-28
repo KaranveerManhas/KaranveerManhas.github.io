@@ -94,10 +94,18 @@ nav {
 .search-element{
     display: flex;
     justify-content: center;
-    flex-direction: column;
+    /* flex-direction: column; */
     position: relative;
     /* border: 1px solid red; */
     width: 100%;
+}
+
+#search-bar-link{
+    display: none;
+}
+
+#search-close {
+    display: none;
 }
 
 .search-element .form-control{
@@ -272,7 +280,7 @@ main {
     /* border: 2px solid white; */
     width: 95%;
     /* height: 72vh; */
-    max-height: 480px;
+    /* max-height: 480px; */
 }
 
 .carousel:hover {
@@ -454,6 +462,7 @@ main {
 .content-card {
     height: 100%;
     width: 18%;
+    min-height: 350px;
     max-height: 400px;
     min-width: 140px;
     max-width: 160px;

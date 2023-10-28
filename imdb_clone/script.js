@@ -8,11 +8,25 @@ const searchList = document.getElementById("search-list");
 const resultContainer = document.getElementById("result-container");
 // Watchlist offcanvas container variable
 const watchList = document.getElementById("watchlist-body");
+// Search Bar Link which only shows up for mobile devices mobile devices 
+const searchBarLink = document.getElementById("search-bar-link");
+// Search Bar Container Div
+const searchContainer = document.querySelector('.search-container');
+// Close button for search bar in mobile view
+const searchClose = document.getElementById("search-close");
 
 // Url for Titles: https://omdbapi.com/?s=(movie-name)&page=1&apikey=fc1fef96
 // Url for movie details: http://www.omdbapi.com/?i=(imdbID)&apikey=fc1fef96
 
+// The following event listeners are set up to display and hide the search bar while in mobile view
 
+searchBarLink.addEventListener('click', function(){
+    searchContainer.style.top = "2px";
+});
+
+searchClose.addEventListener('click', function() {
+    searchContainer.style.top = "-50px";
+});
 
 // Get Movie details from API
 async function getMovieDetails(searchTerm) {
@@ -245,3 +259,5 @@ async function deleteMovie(movieId) {
     // Call displaywatchlist function to refresh the watchlist
     displayWatchList();
 }
+
+
