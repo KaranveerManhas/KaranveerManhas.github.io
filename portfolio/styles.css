@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Ubuntu:wght@300;400;500;700&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+* a {
+    text-decoration: none;
+}
+
+body {
+    background-color: black;
+}
+
+header {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+@keyframes appear {
+    0%{
+        opacity: 0;
+        transform: translateY(200px);
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes appearLater {
+    0% {
+        opacity: 0;
+        transform: translateY(500px);
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.heading {
+    z-index: 100;
+    transform: translateX(15%);
+}
+
+.heading h1 {
+    font-size: 5rem;
+    animation: appear 1s ease-out;
+}
+
+.heading h2 {
+    animation: appearLater 2s ease-out;
+}
+
+.heading h2 span {
+    color: #6746ff;
+}
+
+.switch-modes {
+    position: fixed;
+    right: 2%;
+    top: 5%;
+    font-size: 3rem;
+}
+
+.switch-modes:hover {
+    cursor: pointer;
+}
+
+.navbar {
+    position: absolute;
+    top: 5%;
+    left: 35%;
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid white; */
+}
+
+.navbar a {
+    font-weight: 500;
+    font-family: 'Raleway';
+    padding: 3px 6px;
+    border: 2px solid transparent;
+}
+
+.navbar a:hover {
+    border-color: white;
+    border-radius: 14px;
+    transition: border 0.3s ease;
+}
+
+section {
+    padding: 1% 10%;
+}
+
+section#about {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.about-content .about-heading, .tech-stack .tech-stack-heading {
+    font-size: 2.5rem;
+}
+
+.about-content .info-container {
+    display: flex;
+    gap: 1rem;
+}
+
+.about-content .info-container img{
+    width: 200px;
+    height: 200px;
+}
+
+.about-content .info-container .info {
+    font-family: 'Ubuntu';
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    /* font-weight: 600; */
+    font-size: 14px;
+}
+
+.about-content .info span {
+    color: #8a3cff;
+}
+
+.about-content .info .contact-button {
+    border: 4px solid #782aed;
+    width: fit-content;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5em 1em;
+    overflow: hidden;
+    position: relative;
+}
+
+.about-content .info .contact-button .bg-hover {
+    position: absolute;
+    width: 500%;
+    height: 1000%;
+    top: 0;
+    left: 0;
+    background: #782aed;
+    z-index: -1;
+    transform: rotate(-45deg) translateY(-10%);
+    transition: transform 0.5s linear;
+}
+
+.about-content .info .contact-button:hover {
+    .bg-hover {
+        transform: translateY(-50%);
+    }
+}
+
+
+.tech-stack {
+    width: 100%;
+}
+
+.tech-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.tech-stack-logos {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+}
+
+.tech-stack-logos img {
+    width: 60px;
+    transition: transform 0.2s ease;
+}
+
+.tech-stack-logos img:hover {
+    transform: scale(1.5);
+}
+
+
+
+
+
+
+
+::-webkit-scrollbar {
+    background-color: transparent;
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #6746ff;
+}
+
+@media screen and (max-width: 900px){
+    .heading {
+        font-size: 4rem;
+    }
+}
+
+.white {
+    color: white;
+}
+
+.black {
+    color: black;
+}
