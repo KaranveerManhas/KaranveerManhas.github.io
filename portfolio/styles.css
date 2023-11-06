@@ -12,6 +12,10 @@
     text-decoration: none;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: black;
 }
@@ -22,7 +26,7 @@ header {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding: 0 10%;
+    padding: 0 8%;
 }
 
 #particles {
@@ -81,9 +85,11 @@ header {
 .switch-modes {
     position: fixed;
     right: 2%;
-    top: 5%;
+    top: 8%;
     font-size: 3rem;
+    z-index: 999;
 }
+
 
 .switch-modes:hover {
     cursor: pointer;
@@ -114,7 +120,7 @@ header {
 }
 
 section {
-    padding: 1% 10%;
+    padding: 2% 10%;
 }
 
 section#about {
@@ -150,11 +156,11 @@ section#about {
 }
 
 .about-content .info-container .info {
-    font-family: 'Ubuntu';
+    font-family: 'Raleway';
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    /* font-weight: 600; */
+    font-weight: 500;
     font-size: 14px;
 }
 
@@ -167,25 +173,25 @@ section#about {
     width: fit-content;
     padding: 0.5rem 1rem;
     border-radius: 0.5rem 1rem;
-    overflow: hidden;
+    overflow:hidden;
     position: relative;
 }
 
 .about-content .info .contact-button .bg-hover {
     position: absolute;
     width: 500%;
-    height: 1000%;
-    top: 0;
-    left: 0;
+    height: 500%;
+    top: -600%;
+    left: -500%;
     background: #782aed;
     z-index: -1;
-    transform: rotate(-45deg) translateY(-10%);
+    transform: rotate(25deg);
     transition: transform 0.5s linear;
 }
 
 .about-content .info .contact-button:hover {
     .bg-hover {
-        transform: translateY(-50%);
+        transform: translateX(200px) translateY(100px);
     }
 }
 
@@ -219,8 +225,48 @@ section#about {
 
 
 
+.scroll-top {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 0;
+    border: 2px solid white;
+    width: 50px;
+    height: 20px;
+    transform: rotate(-90deg);
+    background: transparent;
+    border-radius: 14px;
+    cursor: pointer;
+}
+
+@keyframes moveDot {
+    0% {
+        transform: translateX(-15px);
+        opacity: 1;
+    }
+    70% {
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateX(15px);
+        opacity: 0;
+    }
+}
+
+.scroll-top i {
+    font-size: 1.2rem;
+    animation: moveDot 2s ease infinite;
+    z-index: -1;
+}
 
 
+.white {
+    color: white;
+}
+
+.black {
+    color: black;
+}
 
 
 ::-webkit-scrollbar {
@@ -276,12 +322,4 @@ section#about {
     .about-content .info-container {
         flex-wrap: wrap;
     }
-}
-
-.white {
-    color: white;
-}
-
-.black {
-    color: black;
 }
