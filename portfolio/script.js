@@ -123,18 +123,3 @@ switchModes.addEventListener("click", function() {
         isNightMode = !isNightMode;
     }
 });
-
-function scrollToTop() {
-    window.scrollTo({
-        top: 0
-    });
-}
-
-window.addEventListener('scroll', function(){
-    if (this.window.pageYOffset >= 300) {
-        scrollTopButton.style.display = 'block';
-    }
-    else {
-        scrollTopButton.style.display = 'none';
-    }
-})
