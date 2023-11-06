@@ -83,6 +83,7 @@ header {
     right: 2%;
     top: 8%;
     font-size: 3rem;
+    z-index: 999;
 }
 
 .switch-modes:hover {
