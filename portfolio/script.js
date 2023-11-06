@@ -97,6 +97,7 @@ const switchModes = document.querySelector(".switch-modes");
 const body = document.getElementsByTagName("body")[0];
 const whites = document.querySelectorAll(".white");
 const logo = document.getElementById('logo');
+const scrollTopButton = document.querySelector('.scroll-top');
 let isNightMode = true;
 
 
@@ -122,3 +123,18 @@ switchModes.addEventListener("click", function() {
         isNightMode = !isNightMode;
     }
 });
+
+function scrollToTop() {
+    window.scrollTo({
+        top: 0
+    });
+}
+
+window.addEventListener('scroll', function(){
+    if (this.window.pageYOffset >= 300) {
+        scrollTopButton.style.display = 'block';
+    }
+    else {
+        scrollTopButton.style.display = 'none';
+    }
+})
