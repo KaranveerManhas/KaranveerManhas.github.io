@@ -101,8 +101,8 @@ header {
 
 .switch-modes {
     position: fixed;
-    right: 50px;
-    top: 70px;
+    right: 0;
+    top: 10px;
     font-size: 2.5rem;
     z-index: 6;
     width: 70px;
