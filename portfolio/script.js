@@ -98,28 +98,38 @@ const body = document.getElementsByTagName("body")[0];
 const whites = document.querySelectorAll(".white");
 const logo = document.getElementById('logo');
 const scrollTopButton = document.querySelector('.scroll-top');
+const navBarLinks = document.querySelectorAll('.nav-link');
 let isNightMode = true;
+
 
 
 switchModes.addEventListener("click", function() {
     if (isNightMode) {
         for (white of whites) {
-            white.classList.remove("white");
-            white.classList.add("black");
+            white.classList.replace("white", "black");
         }
-        switchModes.innerHTML = `<i class='bx bx-sun black'></i>`;
+        switchModes.innerHTML = `
+        <div class="circle"></div>
+        <i class='bx bx-sun black'></i>`;
         body.style.backgroundColor = "#fff";
+        body.style.cursor = `url("./assets/cursor_black.png"), auto`;
         logo.src = "assets/logo_black.png";
+        scrollTopButton.style.borderColor = "#000";
+        scrollTopButton.children[0].style.color = "#000";
         isNightMode = !isNightMode;
     }
     else{
         for (white of whites) {
-            white.classList.remove("black");
-            white.classList.add("white");
+            white.classList.replace("black", "white");
         }
-        switchModes.innerHTML = `<i class='bx bx-moon white'></i>`;
+        switchModes.innerHTML = `
+        <div class="circle"></div>
+        <i class='bx bx-moon white'></i>`;
         body.style.backgroundColor = "#000";
+        body.style.cursor = `url("./assets/cursor_white.png"), auto`;
         logo.src = "assets/logo_white.png";
+        scrollTopButton.style.borderColor = "#fff";
+        scrollTopButton.children[0].style.color = "#fff";
         isNightMode = !isNightMode;
     }
 });
@@ -137,3 +147,11 @@ window.addEventListener('scroll', function() {
         scrollTopButton.style.display = 'none';
     }
 })
+
+function showCaption(logoContainer) {
+    logoContainer.children[1].style.opacity = '1';
+}
+
+function hideCaption(logoContainer) {
+    logoContainer.children[1].style.opacity = '0';
+}

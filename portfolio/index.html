@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/logo_white.png">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="styles.css">
     <title>Portfolio | Karanveer Singh</title>
@@ -11,13 +12,14 @@
     <header>
         <div id="particles"></div>
         <div class="switch-modes">
+            <div class="circle"></div>
             <i class='bx bx-moon white'></i>
         </div>
         <div class="navbar">
-            <a href="#" class="white">Home</a>
-            <a href="#about" class="white">About</a>
-            <a href="#projects" class="white">Projects</a>
-            <a href="#contact-me" class="white">Contact Me</a>
+            <a href="#" class="nav-link white">Home</a>
+            <a href="#about" class="nav-link white">About</a>
+            <a href="#projects" class="nav-link white">Projects</a>
+            <a href="#contact-me" class="nav-link white">Contact Me</a>
         </div>
         <div class="heading white">
             <h1>Karanveer Singh</h1>
@@ -44,22 +46,48 @@
         <div class="tech-stack">
             <h1 class="tech-stack-heading white">My Tech Stack</h1>
             <div class="tech-stack-logos">
-                <img src="assets/icons8-html-48.png" alt="HTML" class="tech-stacks">
-                <img src="assets/icons8-css-48.png" alt="CSS" class="tech-stacks">
-                <img src="assets/icons8-javascript-48.png" alt="Javascript" class="tech-stacks">
-                <img src="assets/icons8-python-48.png" alt="Python" class="tech-stacks">
-                <img src="assets/icons8-nodejs-48.png" alt="NodeJS" class="tech-stacks">
-                <img src="assets/icons8-express-js-50.png" alt="ExpressJS" class="tech-stacks">
-                <img src="assets/icons8-git-48.png" alt="Git/Github" class="tech-stacks">
+                <div onmouseover="showCaption(this)" onmouseout="hideCaption(this)">
+                    <img src="assets/icons8-html-48.png" alt="HTML">
+                    <p class="white">HTML</p>
+                </div>
+                <div onmouseover="showCaption(this)" onmouseout="hideCaption(this)">
+                    <img src="assets/icons8-css-48.png" alt="CSS">
+                    <p class="white">CSS</p>
+                </div>
+                <div onmouseover="showCaption(this)" onmouseout="hideCaption(this)">
+                    <img src="assets/icons8-javascript-48.png" alt="Javascript">
+                    <p class="white">Javascript</p>
+                </div>
+                <div onmouseover="showCaption(this)" onmouseout="hideCaption(this)">
+                    <img src="assets/icons8-python-48.png" alt="Python">
+                    <p class="white">Python</p>
+                </div>
+                <div onmouseover="showCaption(this)" onmouseout="hideCaption(this)">
+                    <img src="assets/icons8-nodejs-48.png" alt="NodeJS">
+                    <p class="white">NodeJS</p>
+                </div>
+                <div onmouseover="showCaption(this)" onmouseout="hideCaption(this)"> 
+                    <img src="assets/icons8-express-js-50.png" alt="ExpressJS">
+                    <p class="white">ExpressJS</p>
+                </div>
+                <div onmouseover="showCaption(this)" onmouseout="hideCaption(this)">
+                    <img src="assets/icons8-git-48.png" alt="Git/Github">
+                    <p class="white">Git/Github</p>
+                </div>
             </div>
         </div>
     </section>
     <section id="projects">
+        <h1 class="projects-heading white">Projects</h1>
+
+    </section>
+
+    <section id="contact-me">
 
     </section>
 
     <button class="scroll-top" onclick="scrollToTop()">
-        <i class="bx bx-chevron-right white"></i>
+        <i class="bx bx-chevron-right"></i>
     </button>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
     <script src="script.js"></script>
