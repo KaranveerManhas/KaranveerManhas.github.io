@@ -7,10 +7,7 @@
     box-sizing: border-box;
     font-family: 'Raleway', sans-serif;
 }
-
-* a {
-    text-decoration: none;
-}
+ 
 
 html {
     scroll-behavior: smooth;
@@ -19,6 +16,11 @@ html {
 body {
     background-color: black;
     cursor: url('./assets/cursor_white.png'), auto;
+}
+
+* a {
+    text-decoration: none;
+    cursor: inherit;
 }
 
 
@@ -77,6 +79,7 @@ header {
 }
 
 .heading h2 {
+    padding: 0 5px;
     animation: appearLater 2s ease-out;
 }
 
@@ -146,11 +149,10 @@ header {
     font-family: 'Raleway';
     padding: 3px 6px;
     border: 2px solid transparent;
-    cursor: inherit;
 }
 
 .navbar a:hover {
-    border-color: white;
+    /* border-color: white; */
     border-radius: 14px;
     transition: border 0.3s ease;
 }

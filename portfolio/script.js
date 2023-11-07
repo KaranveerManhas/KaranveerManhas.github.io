@@ -101,7 +101,21 @@ const scrollTopButton = document.querySelector('.scroll-top');
 const navBarLinks = document.querySelectorAll('.nav-link');
 let isNightMode = true;
 
+for (navLink of navBarLinks) {
+    navLink.addEventListener('mouseover', function(){
+        if (isNightMode) {
+            this.style.borderColor = "#fff";
+        }else {
+            this.style.borderColor = "#000";
+        }
+    })
+}
 
+for (navLink of navBarLinks) {
+    navLink.addEventListener('mouseout', function(){
+        this.style.borderColor = "transparent";  
+    })
+}
 
 switchModes.addEventListener("click", function() {
     if (isNightMode) {
@@ -141,7 +155,7 @@ function scrollToTop() {
 }
 
 window.addEventListener('scroll', function() {
-    if (window.pageYOffset >= 300) {
+    if (window.scrollY >= 300) {
         scrollTopButton.style.display = 'block';
     }else {
         scrollTopButton.style.display = 'none';
