@@ -200,6 +200,7 @@ section#about {
     gap: 1rem;
     font-weight: 500;
     font-size: 14px;
+    max-width: 700px;
 }
 
 .about-content .info span {
@@ -350,6 +351,8 @@ section#about {
     }
     .switch-modes {
         font-size: 2rem;
+        right: 10px;
+        justify-content: space-between;
     }
 
     .navbar {
@@ -386,5 +389,19 @@ section#about {
 @media screen and (max-width: 700px) {
     .about-content .info-container {
         flex-wrap: wrap;
+    }
+
+    .tech-stack-logos div img {
+        width: 30px;
+    }
+
+    .tech-stack-logos div p {
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    section {
+        padding: 1% 0;
     }
 }
