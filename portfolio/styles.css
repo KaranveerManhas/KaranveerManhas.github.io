@@ -387,11 +387,6 @@ section#about {
 }
 
 @media screen and (max-width: 700px) {
-
-    .switch-modes {
-        right: 17.5px;
-        top: 20px;
-    }
     .about-content .info-container {
         flex-wrap: wrap;
     }
@@ -406,6 +401,12 @@ section#about {
 }
 
 @media screen and (max-width: 500px) {
+
+    .switch-modes {
+        right: -20px;
+        top: 50px;
+    }
+
     section {
         padding: 1% 0;
     }
