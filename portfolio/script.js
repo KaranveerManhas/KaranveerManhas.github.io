@@ -183,7 +183,7 @@ function createRandomPath() {
     for (let i = 2; i < 50; i+=2) {
         randomSize.push(i);
     }
-    for (var i = 10; i < 90; i+=2) {
+    for (var i = 1; i < 90; i+=2) {
         randomPath.push(i);
     }
     for (dripElement of dripElements) {
