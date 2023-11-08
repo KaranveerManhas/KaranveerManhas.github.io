@@ -1,0 +1,493 @@
+
+.cont{
+    width:inherit;
+    height:100%;
+    position:relative;
+    overflow:hidden;
+    border-bottom:100px solid #6746ff;
+    border-radius: 0px;
+    filter:url("#goo");
+}
+.cont .drip{
+    height:35px;
+    width:35px;
+    min-width: 8px;
+    min-height: 8px;
+    border-radius: 50%;
+    background:black;
+    position:absolute;
+    top:-100%;
+    animation:falling 3s linear infinite;
+}
+@keyframes falling{
+    0%{
+        top:100%;
+        opacity: 1;
+    }
+    20%{
+        top:80%;
+        opacity: 1;
+    }
+    60% {
+        opacity: 0;
+    }
+    80%{
+        top:0%;
+        opacity: 0;
+    }
+    100%{
+        opacity: 0;
+        top:-100%;
+    }
+}
+.cont .drip:nth-child(1){
+    border-color:black;
+    height:29px;
+    width:29px;
+    animation-delay: -0.2s;
+    background:black;
+    left:10%;
+    margin-left:60px;
+}
+.cont .drip:nth-child(2){
+    border-color:black;
+    height:25px;
+    width:25px;
+    animation-delay: -0.4s;
+    background:black;
+    left:20%;
+    margin-left:60px;
+}
+.cont .drip:nth-child(3){
+    border-color:black;
+    height:38px;
+    width:38px;
+    animation-delay: -0.6s;
+    background:black;
+    left:30%;
+    margin-left:60px;
+}
+.cont .drip:nth-child(4){
+    border-color:black;
+    height:29px;
+    width:29px;
+    animation-delay: -0.8s;
+    background:black;
+    left:40%;
+    margin-left:60px;
+}
+.cont .drip:nth-child(5){
+    border-color:black;
+    height:20px;
+    width:20px;
+    animation-delay: -1s;
+    background:black;
+    left:50%;
+    margin-left:60px;
+}
+.cont .drip:nth-child(6){
+    border-color:black;
+    height:14px;
+    width: 14px;
+    animation-delay: -1.2;
+    background:black;
+    left:60%;
+    margin-left:60px;
+}
+.cont .drip:nth-child(7){
+    border-color:black;
+    height:5px;
+    width:5px;
+    animation-delay: -1.4s;
+    background:black;
+    left:70%;
+    margin-left:60px;
+}
+.cont .drip:nth-child(8){
+    border-color:black;
+    height:2px;
+    width:2px;
+    animation-delay: -1.6s;
+    background:black;
+    left:15%;
+    margin-left:60px;
+}
+.cont .drip:nth-child(9){
+    border-color:black;
+    height:2px;
+    width:2px;
+    animation-delay: -1.8s;
+    background:black;
+    left:1%;
+    margin-left:60px;
+}
+.cont .drip:nth-child(10){
+    border-color:black;
+    height:16px;
+    width:16px;
+    animation-delay: -2s;
+    background:black;
+    left:80%;
+    margin-left:60px;
+}
+.cont .drip:nth-child(11){
+    border-color:black;
+    height:11px;
+    width:11px;
+    animation-delay: -2.2s;
+    background:black;
+    left:90%;
+    margin-left:60px;
+}
+.cont .drip:nth-child(12){
+    border-color:black;
+    height:4px;
+    width:4px;
+    animation-delay: -2.4s;
+    background:black;
+    left:99%;
+    margin-left:60px;
+}
+.cont .drip:nth-child(13){
+    border-color:black;
+    height:18px;
+    width:18px;
+    animation-delay: -2.6s;
+    background:black;
+    left:5%;
+    margin-left:60px;
+}
+.cont .drip:nth-child(14){
+    border-color:black;
+    height:4px;
+    width:4px;
+    animation-delay: -2.8s;
+    background:black;
+    left:7%;
+    margin-left:60px;
+}
+.cont .drip:nth-child(15){
+    border-color:black;
+    height:13px;
+    width:13px;
+    animation-delay: -3s;
+    background:black;
+    left:85%;
+    margin-left:60px;
+}
+.cont .drip:nth-child(16){
+    border-color:black;
+    height:40px;
+    width:40px;
+    animation-delay: -3.2s;
+    background:black;
+    left:75%;
+    margin-left:60px;
+}
+.cont .drip:nth-child(17){
+    border-color:black;
+    height:27px;
+    width:27px;
+    animation-delay: -3.4s;
+    background:black;
+    left:65%;
+    margin-left:60px;
+}
+.cont .drip:nth-child(18){
+    border-color:black;
+    height:13px;
+    width:13px;
+    animation-delay: -3.6s;
+    background:black;
+    left:55%;
+    margin-left:60px;
+}
+.cont .drip:nth-child(19){
+    border-color:black;
+    height:23px;
+    width:23px;
+    animation-delay: -3.8s;
+    background:black;
+    left:45%;
+    margin-left:60px;
+}
+.cont .drip:nth-child(20){
+    border-color:black;
+    height:20px;
+    width:20px;
+    animation-delay: -4s;
+    background:black;
+    left:35%;
+    margin-left:60px;
+}
+
+.cont .drip:nth-child(21){
+    border-color:black;
+    height:29px;
+    width:29px;
+    animation-delay: -0.2s;
+    background:black;
+    left:10%;
+    margin-left:60px;
+}
+.cont .drip:nth-child(22){
+    border-color:black;
+    height:25px;
+    width:25px;
+    animation-delay: -0.4s;
+    background:black;
+    left:20%;
+    margin-left:60px;
+}
+.cont .drip:nth-child(23){
+    border-color:black;
+    height:38px;
+    width:38px;
+    animation-delay: -0.6s;
+    background:black;
+    left:30%;
+    margin-left:60px;
+}
+.cont .drip:nth-child(24){
+    border-color:black;
+    height:29px;
+    width:29px;
+    animation-delay: -0.8s;
+    background:black;
+    left:40%;
+    margin-left:60px;
+}
+.cont .drip:nth-child(25){
+    border-color:black;
+    height:20px;
+    width:20px;
+    animation-delay: -1s;
+    background:black;
+    left:50%;
+    margin-left:60px;
+}
+.cont .drip:nth-child(26){
+    border-color:black;
+    height:14px;
+    width: 14px;
+    animation-delay: -1.2;
+    background:black;
+    left:60%;
+    margin-left:60px;
+}
+.cont .drip:nth-child(27){
+    border-color:black;
+    height:5px;
+    width:5px;
+    animation-delay: -1.4s;
+    background:black;
+    left:70%;
+    margin-left:60px;
+}
+.cont .drip:nth-child(28){
+    border-color:black;
+    height:2px;
+    width:2px;
+    animation-delay: -1.6s;
+    background:black;
+    left:15%;
+    margin-left:60px;
+}
+.cont .drip:nth-child(29){
+    border-color:black;
+    height:2px;
+    width:2px;
+    animation-delay: -1.8s;
+    background:black;
+    left:1%;
+    margin-left:60px;
+}
+.cont .drip:nth-child(30){
+    border-color:black;
+    height:16px;
+    width:16px;
+    animation-delay: -2s;
+    background:black;
+    left:80%;
+    margin-left:60px;
+}
+.cont .drip:nth-child(31){
+    border-color:black;
+    height:11px;
+    width:11px;
+    animation-delay: -2.2s;
+    background:black;
+    left:90%;
+    margin-left:60px;
+}
+.cont .drip:nth-child(32){
+    border-color:black;
+    height:4px;
+    width:4px;
+    animation-delay: -2.4s;
+    background:black;
+    left:99%;
+    margin-left:60px;
+}
+.cont .drip:nth-child(33){
+    border-color:black;
+    height:18px;
+    width:18px;
+    animation-delay: -2.6s;
+    background:black;
+    left:5%;
+    margin-left:60px;
+}
+.cont .drip:nth-child(34){
+    border-color:black;
+    height:4px;
+    width:4px;
+    animation-delay: -2.8s;
+    background:black;
+    left:7%;
+    margin-left:60px;
+}
+.cont .drip:nth-child(35){
+    border-color:black;
+    height:13px;
+    width:13px;
+    animation-delay: -3s;
+    background:black;
+    left:85%;
+    margin-left:60px;
+}
+.cont .drip:nth-child(36){
+    border-color:black;
+    height:40px;
+    width:40px;
+    animation-delay: -3.2s;
+    background:black;
+    left:75%;
+    margin-left:60px;
+}
+.cont .drip:nth-child(37){
+    border-color:black;
+    height:27px;
+    width:27px;
+    animation-delay: -3.4s;
+    background:black;
+    left:65%;
+    margin-left:60px;
+}
+.cont .drip:nth-child(38){
+    border-color:black;
+    height:13px;
+    width:13px;
+    animation-delay: -3.6s;
+    background:black;
+    left:55%;
+    margin-left:60px;
+}
+.cont .drip:nth-child(39){
+    border-color:black;
+    height:23px;
+    width:23px;
+    animation-delay: -3.8s;
+    background:black;
+    left:45%;
+    margin-left:60px;
+}
+.cont .drip:nth-child(40){
+    border-color:black;
+    height:20px;
+    width:20px;
+    animation-delay: -4s;
+    background:black;
+    left:35%;
+    margin-left:60px;
+}
+.cont .drip:nth-child(41){
+    border-color:black;
+    height:29px;
+    width:29px;
+    animation-delay: -0.2s;
+    background:black;
+    left:10%;
+    margin-left:60px;
+}
+.cont .drip:nth-child(42){
+    border-color:black;
+    height:25px;
+    width:25px;
+    animation-delay: -0.4s;
+    background:black;
+    left:20%;
+    margin-left:60px;
+}
+.cont .drip:nth-child(43){
+    border-color:black;
+    height:38px;
+    width:38px;
+    animation-delay: -0.6s;
+    background:black;
+    left:30%;
+    margin-left:60px;
+}
+.cont .drip:nth-child(44){
+    border-color:black;
+    height:29px;
+    width:29px;
+    animation-delay: -0.8s;
+    background:black;
+    left:40%;
+    margin-left:60px;
+}
+.cont .drip:nth-child(45){
+    border-color:black;
+    height:20px;
+    width:20px;
+    animation-delay: -1s;
+    background:black;
+    left:50%;
+    margin-left:60px;
+}
+.cont .drip:nth-child(46){
+    border-color:black;
+    height:14px;
+    width: 14px;
+    animation-delay: -1.2;
+    background:black;
+    left:60%;
+    margin-left:60px;
+}
+.cont .drip:nth-child(47){
+    border-color:black;
+    height:5px;
+    width:5px;
+    animation-delay: -1.4s;
+    background:black;
+    left:70%;
+    margin-left:60px;
+}
+.cont .drip:nth-child(48){
+    border-color:black;
+    height:2px;
+    width:2px;
+    animation-delay: -1.6s;
+    background:black;
+    left:15%;
+    margin-left:60px;
+}
+.cont .drip:nth-child(49){
+    border-color:black;
+    height:2px;
+    width:2px;
+    animation-delay: -1.8s;
+    background:black;
+    left:1%;
+    margin-left:60px;
+}
+.cont .drip:nth-child(50){
+    border-color:black;
+    height:16px;
+    width:16px;
+    animation-delay: -2s;
+    background:black;
+    left:80%;
+    margin-left:60px;
+}

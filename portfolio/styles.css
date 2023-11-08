@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Ubuntu:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Raleway:wght@300;400;500;600;700&family=Ubuntu:wght@300;400;500;700&display=swap');
 
 
 *{
@@ -318,12 +318,71 @@ section#about {
     flex-direction: column;
     align-items: center;
     gap: 3rem;
+    height: 100vh;
 }
 
 .projects-heading {
     font-size: 2.5rem;
 }
 
+/* Contact Me section */
+
+#contact-me {
+    padding: 0;
+    height: 80vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: inherit;
+}
+
+.contact-card {
+    background: #242424;
+    width: 500px;
+    height: 250px;
+    z-index: 2;
+    margin-top: -20%;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2%;
+}
+
+.contact-card h1 {
+    font-size: 2rem;
+}
+
+.contact-card p {
+    font-family: 'Poppins';
+}
+
+.contact-card .contact-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.contact-card .contact-icons a i {
+    font-size: 2rem;
+    transition: transform 0.2s ease;
+}
+
+.contact-card .contact-icons a:hover i{
+    transform: scale(1.5);
+}
+
+
+.drip-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 40%;
+    box-sizing: border-box;
+    left: 0;
+    bottom: 0;
+}
 
 
 .white {
@@ -334,6 +393,9 @@ section#about {
     color: black;
 }
 
+.italics {
+    font-style: italic;
+}
 
 ::-webkit-scrollbar {
     background-color: transparent;
@@ -392,11 +454,24 @@ section#about {
     }
 
     .tech-stack-logos div img {
-        width: 30px;
+        width: 40px;
     }
 
     .tech-stack-logos div p {
         font-size: 10px;
+    }
+
+    .contact-card {
+        width: 400px;
+        height: 220px;
+        padding: 5%;
+    }
+
+    .contact-card h1{
+        font-size: 1.5rem;
+    }
+    .contact-card p {
+        font-size: 0.9rem;
     }
 }
 
@@ -409,5 +484,10 @@ section#about {
 
     section {
         padding: 1% 0;
+    }
+
+    .contact-card {
+        width: 350px;
+        height: 200px;
     }
 }

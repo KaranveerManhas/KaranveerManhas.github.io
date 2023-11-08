@@ -99,6 +99,9 @@ const whites = document.querySelectorAll(".white");
 const logo = document.getElementById('logo');
 const scrollTopButton = document.querySelector('.scroll-top');
 const navBarLinks = document.querySelectorAll('.nav-link');
+const dripContainer = document.querySelector('.drip-wrapper');
+const contactCard = document.querySelector('.contact-card');
+
 let isNightMode = true;
 
 for (navLink of navBarLinks) {
@@ -130,6 +133,7 @@ switchModes.addEventListener("click", function() {
         logo.src = "assets/logo_black.png";
         scrollTopButton.style.borderColor = "#000";
         scrollTopButton.children[0].style.color = "#000";
+        contactCard.style.background = "lightgrey";
         isNightMode = !isNightMode;
     }
     else{
@@ -144,6 +148,7 @@ switchModes.addEventListener("click", function() {
         logo.src = "assets/logo_white.png";
         scrollTopButton.style.borderColor = "#fff";
         scrollTopButton.children[0].style.color = "#fff";
+        contactCard.style.background = "#242424";
         isNightMode = !isNightMode;
     }
 });
@@ -169,3 +174,53 @@ function showCaption(logoContainer) {
 function hideCaption(logoContainer) {
     logoContainer.children[1].style.opacity = '0';
 }
+
+
+function createRandomPath() {
+    const dripElements = document.querySelectorAll('.drip');
+    let randomPath = [];
+    let randomSize = [];
+    for (let i = 2; i < 50; i+=2) {
+        randomSize.push(i);
+    }
+    for (var i = 1; i < 100; i+=3) {
+        randomPath.push(i);
+    }
+    for (dripElement of dripElements) {
+        let left = randomPath[Math.floor(Math.random() * randomPath.length)];
+        let size = randomSize[Math.floor(Math.random() * randomSize.length)];
+        dripElement.style.left = `${left}%`;
+        dripElement.style.width = `${size}px`;
+        dripElement.style.height = `${size}px`;
+        dripElement.style.background = "#6746ff";
+    }
+}
+
+const createDrippingElements = () => {
+    const cont = document.createElement('div');
+    cont.className = 'cont';
+    let limit = 50;
+    if (window.innerWidth <= 700) {
+        limit = 25;
+    }
+    for (var i = 0; i < limit; i++){
+        const dripDiv = document.createElement('div');
+        dripDiv.className = 'drip';
+        cont.appendChild(dripDiv);
+    }
+    cont.innerHTML += `
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+      <defs>
+        <filter id="goo">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+          <feBlend in="SourceGraphic" in2="goo" />
+        </filter>
+      </defs>
+    </svg>
+    `;
+    dripContainer.appendChild(cont);
+    createRandomPath();
+};
+
+createDrippingElements();
