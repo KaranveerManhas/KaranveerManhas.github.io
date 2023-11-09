@@ -101,12 +101,12 @@ header {
 
 .switch-modes {
     position: fixed;
-    right: 0;
+    right: 2px;
     top: 10px;
     font-size: 2.5rem;
     z-index: 6;
-    width: 70px;
-    height: 70px;
+    padding: 10px;
+    border: 2px solid transparent;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -396,7 +396,6 @@ section#about {
     }
     .switch-modes {
         font-size: 2rem;
-        right: 10px;
         justify-content: space-between;
     }
 
@@ -462,6 +461,7 @@ section#about {
 
     .switch-modes {
         top: 80px;
+        right: 0px;
     }
 
     section {
@@ -473,15 +473,14 @@ section#about {
         height: 200px;
     }
 
-    .heading h1 {
-        font-size: 2rem;
-    }
-    .heading h2 {
-        font-size: 1rem;
-        padding: 0 0.5%;
+    .about-content .about-heading, .tech-stack .tech-stack-heading {
+        font-size: 1.8rem;
     }
 
-    .about-content .about-heading, .tech-stack .tech-stack-heading {
-        font-size: 1.5rem;
+    .tech-stack-logos div img {
+        width: 30px;
+    }
+    .tech-stack-logos div p {
+        font-size: 6px;
     }
 }
