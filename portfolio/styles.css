@@ -151,6 +151,7 @@ section#about {
 
 .about-content {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
@@ -460,16 +461,27 @@ section#about {
 @media screen and (max-width: 500px) {
 
     .switch-modes {
-        right: -20px;
-        top: 50px;
+        top: 80px;
     }
 
     section {
-        padding: 1% 0;
+        padding: 1% 2%;
     }
 
     .contact-card {
         width: 350px;
         height: 200px;
+    }
+
+    .heading h1 {
+        font-size: 2rem;
+    }
+    .heading h2 {
+        font-size: 1rem;
+        padding: 0 0.5%;
+    }
+
+    .about-content .about-heading, .tech-stack .tech-stack-heading {
+        font-size: 1.5rem;
     }
 }
