@@ -101,7 +101,6 @@ const scrollTopButton = document.querySelector('.scroll-top');
 const navBarLinks = document.querySelectorAll('.nav-link');
 const dripContainer = document.querySelector('.drip-wrapper');
 const contactCard = document.querySelector('.contact-card');
-
 let isNightMode = true;
 
 for (navLink of navBarLinks) {
@@ -120,6 +119,21 @@ for (navLink of navBarLinks) {
     })
 }
 
+function changeSwitchBorder(switchButton) {
+    if (isNightMode) {
+        switchButton.style.border = "2px solid #fff";
+    }else {
+        switchButton.style.border = "2px solid #000";
+    }
+    // switchModes.addEventListener('mouseout', function() {
+    //     switchModeButtonCircle.style.borderColor = "transparent";
+    // });
+}
+
+function removeBorder(switchButton) {
+    switchButton.style.border = "2px solid transparent";
+}
+
 switchModes.addEventListener("click", function() {
     if (isNightMode) {
         for (white of whites) {
@@ -135,7 +149,7 @@ switchModes.addEventListener("click", function() {
         scrollTopButton.children[0].style.color = "#000";
         contactCard.style.background = "lightgrey";
         isNightMode = !isNightMode;
-    }
+        }
     else{
         for (white of whites) {
             white.classList.replace("black", "white");
@@ -152,6 +166,7 @@ switchModes.addEventListener("click", function() {
         isNightMode = !isNightMode;
     }
 });
+
 
 function scrollToTop() {
     window.scrollTo ({
