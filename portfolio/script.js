@@ -157,7 +157,7 @@ switchModes.addEventListener("click", function() {
         switchModes.innerHTML = `
         <div class="circle"></div>
         <i class='bx bx-moon white'></i>`;
-        body.style.backgroundColor = "#000";
+        body.style.backgroundColor = "rgb(24, 6, 27)";
         body.style.cursor = `url("./assets/cursor_white.png"), auto`;
         logo.src = "assets/logo_white.png";
         scrollTopButton.style.borderColor = "#fff";

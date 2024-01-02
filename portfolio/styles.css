@@ -14,7 +14,7 @@ html {
 }
 
 body {
-    background-color: black;
+    background-color: rgb(24, 6, 27);
     cursor: url('./assets/cursor_white.png'), auto;
 }
 
@@ -322,7 +322,7 @@ section#about {
 }
 
 .contact-card {
-    background: #242424;
+    background: #221e1e;
     width: 500px;
     height: 250px;
     z-index: 2;
