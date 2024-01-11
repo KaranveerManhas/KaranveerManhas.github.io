@@ -1,3 +1,5 @@
+let particleColors = ["#6746ff", "#782aed"]
+
 particlesJS("particles", {
     particles: {
         number: {
@@ -8,7 +10,7 @@ particlesJS("particles", {
             }
         },
         color: {
-            value: ["#6746ff", "#ffffff", "#782aed"]
+            value: particleColors
         },
         shape: {
             type: 'circle',
@@ -157,7 +159,7 @@ switchModes.addEventListener("click", function() {
         switchModes.innerHTML = `
         <div class="circle"></div>
         <i class='bx bx-moon white'></i>`;
-        body.style.backgroundColor = "rgb(24, 6, 27)";
+        body.style.backgroundColor = "#000";
         body.style.cursor = `url("./assets/cursor_white.png"), auto`;
         logo.src = "assets/logo_white.png";
         scrollTopButton.style.borderColor = "#fff";
